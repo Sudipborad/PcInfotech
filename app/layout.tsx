@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     "Epson print head stockist"
   ],
   authors: [{ name: "PC Infotech Solutions" }],
+  icons: {
+    icon: "/PCIS_logo_light_mode.svg",
+    shortcut: "/PCIS_logo_light_mode.svg",
+    apple: "/PCIS_logo_light_mode.svg",
+  },
   openGraph: {
     title: "PC Infotech Solutions — Authorized Enterprise IT & Printer Services",
     description:
