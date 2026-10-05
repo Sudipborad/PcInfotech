@@ -9,10 +9,11 @@ import { Locations } from "@/components/Locations";
 import { Clients } from "@/components/Clients";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100 relative selection:bg-cyan-500 selection:text-slate-950">
+    <main className="min-h-screen bg-slate-50 text-slate-800 relative selection:bg-blue-600 selection:text-white">
       <Navbar />
       <Hero />
       <About />
@@ -23,6 +24,7 @@ export default function Home() {
       <Clients />
       <CTA />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 }

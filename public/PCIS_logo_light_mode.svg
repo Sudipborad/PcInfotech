@@ -14,7 +14,6 @@
     </linearGradient>
   </defs>
 
-  <rect width="1200" height="500" fill="#FFFFFF"/>
 
   <!-- Orbit / motion swooshes -->
   <path d="M95 300 C245 410 470 425 650 365"
