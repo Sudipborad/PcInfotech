@@ -55,13 +55,21 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Official Logo */}
-          <a href="#overview" className="flex items-center gap-3">
+          <a href="#overview" className="flex items-center gap-2.5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/PCIS_logo_light_mode.svg"
-              alt="PC Infotech Solutions"
-              className="h-10 sm:h-12 w-auto object-contain"
+              src="/pcis-icon.svg"
+              alt="PC Infotech Solutions Logo"
+              className="h-8 sm:h-9 w-auto object-contain"
             />
+            <div className="flex flex-col">
+              <span className="text-sm sm:text-base font-extrabold tracking-tight text-slate-900 leading-tight">
+                PC INFOTECH <span className="text-[#f0453f]">SOLUTIONS</span>
+              </span>
+              <span className="text-[10px] text-slate-500 font-semibold tracking-wider hidden sm:block">
+                Authorized Service Provider • Est. 1995
+              </span>
+            </div>
           </a>
 
           {/* Desktop Navigation Links */}

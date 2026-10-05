@@ -13,10 +13,18 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/PCIS_logo_light_mode.svg"
+                src="/pcis-icon.svg"
                 alt="PC Infotech Solutions"
-                className="h-10 w-auto object-contain"
+                className="h-8 w-auto object-contain"
               />
+              <div className="flex flex-col">
+                <span className="text-sm font-extrabold tracking-tight text-slate-900 leading-tight">
+                  PC INFOTECH <span className="text-[#f0453f]">SOLUTIONS</span>
+                </span>
+                <span className="text-[11px] text-slate-500 font-medium">
+                  Founded 1995 • Proprietor: Mr. Chetan Kumbhani
+                </span>
+              </div>
             </div>
 
             <p className="text-slate-600 text-xs leading-relaxed max-w-sm">

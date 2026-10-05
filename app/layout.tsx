@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "PC Infotech Solutions" }],
   icons: {
-    icon: "/PCIS_logo_light_mode.svg",
-    shortcut: "/PCIS_logo_light_mode.svg",
-    apple: "/PCIS_logo_light_mode.svg",
+    icon: "/pcis-icon.svg",
+    shortcut: "/pcis-icon.svg",
+    apple: "/pcis-icon.svg",
   },
   openGraph: {
     title: "PC Infotech Solutions — Authorized Enterprise IT & Printer Services",
