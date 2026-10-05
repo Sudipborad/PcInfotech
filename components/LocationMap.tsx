@@ -116,7 +116,7 @@ export const LocationMap: React.FC<LocationMapProps> = ({
             rel="noopener noreferrer"
             style="display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; padding: 7px 12px; background-color: #0B4EA2; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 11px; font-weight: 700; text-align: center; box-sizing: border-box;"
           >
-            🧭 Get Directions in Google Maps ↗
+            Get Direction ↗
           </a>
         </div>
       `;

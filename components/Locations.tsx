@@ -157,7 +157,7 @@ export const Locations: React.FC = () => {
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-semibold shadow-xs transition-colors"
                   >
                     <Navigation className="w-3.5 h-3.5" />
-                    <span>Get Directions in Google Maps</span>
+                    <span>Get Direction</span>
                     <ArrowUpRight className="w-3 h-3 opacity-80" />
                   </a>
 
@@ -261,7 +261,7 @@ export const Locations: React.FC = () => {
                         title="Get directions to this service center in Google Maps"
                       >
                         <Navigation className="w-3 h-3" />
-                        <span>Get Directions ↗</span>
+                        <span>Get Direction ↗</span>
                       </a>
                     </div>
                   </div>
