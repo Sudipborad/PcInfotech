@@ -16,6 +16,10 @@ const nextConfig = {
         source: "/logos/:path*",
         destination: "/LOGOS/:path*",
       },
+      {
+        source: "/LOGOS/Redington.svg",
+        destination: "/LOGOS/redington.svg",
+      },
     ];
   },
 };

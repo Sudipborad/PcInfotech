@@ -197,7 +197,7 @@ export const Hero: React.FC = () => {
               {/* Redington */}
               <div className="flex items-center px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/LOGOS/Redington.svg" alt="Redington Logo" className="h-4 w-auto object-contain" />
+                <img src="/LOGOS/redington.svg" alt="Redington Logo" className="h-4 w-auto object-contain" />
               </div>
 
               {/* WeP */}
