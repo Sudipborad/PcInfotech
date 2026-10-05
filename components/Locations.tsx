@@ -11,8 +11,6 @@ import {
   MapPin, 
   Search, 
   Phone, 
-  Building, 
-  Users, 
   Navigation,
   ArrowUpRight
 } from "lucide-react";
@@ -223,27 +221,9 @@ export const Locations: React.FC = () => {
                       {loc.address}
                     </p>
 
-                    <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-slate-500 mt-3 pt-2.5 border-t border-slate-100">
-                      <div className="flex items-center gap-1 text-slate-800 font-medium">
-                        <Phone className="w-3 h-3 text-blue-600" />
-                        <span>{loc.phones[0]}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Building className="w-3 h-3 text-slate-400" />
-                        <span>{loc.areaSqFt} sq.ft ({loc.tenure})</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Users className="w-3 h-3 text-slate-400" />
-                        <span>{loc.staffCount} Staff</span>
-                      </div>
-                    </div>
-
-                    {/* Coverage tags */}
-                    <div className="mt-2.5 bg-slate-50 p-2 rounded-lg border border-slate-100 text-[10px] text-slate-600">
-                      <span className="font-semibold text-slate-800 block mb-0.5">
-                        District Coverage:
-                      </span>
-                      <span>{loc.coveredAreas.join(", ")}</span>
+                    <div className="flex items-center gap-1.5 text-xs text-slate-800 font-medium mt-2.5 pt-2 border-t border-slate-100">
+                      <Phone className="w-3.5 h-3.5 text-blue-600" />
+                      <span>{loc.phones[0]}</span>
                     </div>
 
                     {/* Action Row: Get Directions in Google Maps & Call */}

@@ -101,14 +101,8 @@ export const LocationMap: React.FC<LocationMapProps> = ({
           <p style="font-size: 11px; color: #475569; margin: 0 0 6px 0; line-height: 1.4;">
             ${loc.address}, ${loc.city}
           </p>
-          <div style="font-size: 11px; color: #0f172a; margin-bottom: 6px; font-weight: 600;">
+          <div style="font-size: 11px; color: #0f172a; margin-bottom: 10px; font-weight: 600;">
             📞 ${loc.phones.join(", ")}
-          </div>
-          <div style="font-size: 10px; color: #64748b; margin-bottom: 8px;">
-            🏢 <b>Facility:</b> ${loc.areaSqFt} sq.ft (${loc.tenure}) | <b>Staff:</b> ${loc.staffCount}
-          </div>
-          <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 6px; border-radius: 6px; font-size: 10px; color: #334155; margin-bottom: 8px;">
-            <b>Coverage:</b> ${loc.coveredAreas.slice(0, 4).join(", ")}${loc.coveredAreas.length > 4 ? ` +${loc.coveredAreas.length - 4} more` : ""}
           </div>
           <a
             href="${googleMapsUrl}"
