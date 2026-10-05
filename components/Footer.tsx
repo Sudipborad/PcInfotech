@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/pcis-icon.svg"
+                src="/LOGOS/pcis-icon.svg"
                 alt="PC Infotech Solutions"
                 className="h-8 w-auto object-contain"
               />

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 70 680 430" width="2720" height="1720">
+  <rect x="40" y="70" width="680" height="430" fill="#ffffff"/>
+  <g fill="#1f4e79">
+    <!-- P / spiral frame -->
+    <rect x="78" y="105" width="47" height="355"/>
+    <rect x="78" y="105" width="300" height="45"/>
+    <rect x="331" y="105" width="47" height="253"/>
+    <rect x="230" y="312" width="148" height="46"/>
+    <!-- i -->
+    <rect x="432" y="210" width="47" height="200"/>
+    <!-- s -->
+    <rect x="535" y="210" width="147" height="45"/>
+    <rect x="535" y="210" width="47" height="148"/>
+    <rect x="535" y="312" width="147" height="46"/>
+    <rect x="635" y="312" width="47" height="98"/>
+  </g>
+  <g fill="#f0453f">
+    <!-- red C-shaped stroke -->
+    <rect x="150" y="210" width="125" height="45"/>
+    <rect x="150" y="210" width="50" height="250"/>
+    <rect x="150" y="412" width="532" height="48"/>
+    <!-- dot -->
+    <rect x="432" y="105" width="46" height="43"/>
+  </g>
+</svg>

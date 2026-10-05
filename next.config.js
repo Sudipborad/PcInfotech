@@ -10,6 +10,14 @@ const nextConfig = {
     config.resolve.alias["@"] = path.resolve(__dirname);
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        source: "/logos/:path*",
+        destination: "/LOGOS/:path*",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
