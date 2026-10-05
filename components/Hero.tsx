@@ -154,11 +154,11 @@ export const Hero: React.FC = () => {
 
         {/* Bottom Partner Logos Strip */}
         <div className="mt-8 pt-6 border-t border-slate-200">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider shrink-0">
               Authorized Brands & Capabilities:
             </span>
-            <div className="flex flex-wrap items-center gap-2.5">
+            <div className="flex flex-wrap items-center gap-2">
               {/* HP */}
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
