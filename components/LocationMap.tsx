@@ -24,7 +24,7 @@ export const LocationMap: React.FC<LocationMapProps> = ({
     if (!mapContainerRef.current) return;
 
     if (!mapInstanceRef.current) {
-      // Center roughly around Western India (Gujarat/Maharashtra/MP)
+      // Center around Western India (Gujarat/Maharashtra/MP)
       const map = L.map(mapContainerRef.current, {
         center: [20.5937, 74.5],
         zoom: 6,
@@ -43,7 +43,6 @@ export const LocationMap: React.FC<LocationMapProps> = ({
     }
 
     return () => {
-      // Map cleanup on unmount
       if (mapInstanceRef.current) {
         mapInstanceRef.current.remove();
         mapInstanceRef.current = null;
@@ -62,22 +61,23 @@ export const LocationMap: React.FC<LocationMapProps> = ({
 
     locations.forEach((loc) => {
       const isSelected = selectedLocation?.id === loc.id;
+      const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${loc.coordinates[0]},${loc.coordinates[1]}`;
 
-      // Custom HTML Marker Pin
+      // Custom HTML Marker Pin in Brand Colors
       const customIcon = L.divIcon({
         className: "custom-map-pin",
         html: `
-          <div class="relative group cursor-pointer flex items-center justify-center">
-            <div class="w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-200 ${
+          <div class="relative cursor-pointer flex items-center justify-center">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center shadow-md transition-transform duration-200 ${
               isSelected
-                ? "bg-cyan-500 ring-4 ring-cyan-300/40 scale-125 shadow-lg shadow-cyan-500/50"
-                : "bg-slate-900 border-2 border-cyan-400 hover:scale-110"
+                ? "bg-blue-700 ring-4 ring-blue-300 scale-125"
+                : "bg-white border-2 border-blue-700 hover:scale-110"
             }">
-              <span class="text-[10px] font-black ${isSelected ? "text-slate-950" : "text-cyan-300"}">
+              <span class="text-[11px] font-black ${isSelected ? "text-white" : "text-blue-800"}">
                 ${loc.city.substring(0, 2).toUpperCase()}
               </span>
             </div>
-            <div class="absolute -bottom-1 w-2 h-2 rotate-45 ${isSelected ? "bg-cyan-500" : "bg-cyan-400"}"></div>
+            <div class="absolute -bottom-1 w-2.5 h-2.5 rotate-45 ${isSelected ? "bg-blue-700" : "bg-blue-700"}"></div>
           </div>
         `,
         iconSize: [32, 32],
@@ -87,29 +87,37 @@ export const LocationMap: React.FC<LocationMapProps> = ({
 
       const marker = L.marker(loc.coordinates, { icon: customIcon }).addTo(map);
 
-      // Popup Content
+      // Popup Content with explicit Google Maps directions link
       const popupHtml = `
-        <div style="font-family: sans-serif; min-width: 220px; padding: 4px;">
+        <div style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; min-width: 240px; padding: 4px;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-            <span style="font-size: 11px; font-weight: 700; color: #0284c7; text-transform: uppercase;">
+            <span style="font-size: 10px; font-weight: 700; color: #0B4EA2; text-transform: uppercase;">
               ${loc.state} • ${loc.unitEntity}
             </span>
           </div>
-          <h4 style="font-size: 14px; font-weight: 800; color: #0f172a; margin: 0 0 4px 0;">
+          <h4 style="font-size: 14px; font-weight: 800; color: #0f172a; margin: 0 0 4px 0; line-height: 1.3;">
             ${loc.name}
           </h4>
           <p style="font-size: 11px; color: #475569; margin: 0 0 6px 0; line-height: 1.4;">
             ${loc.address}, ${loc.city}
           </p>
-          <div style="font-size: 11px; color: #1e293b; margin-bottom: 6px; font-weight: 600;">
+          <div style="font-size: 11px; color: #0f172a; margin-bottom: 6px; font-weight: 600;">
             📞 ${loc.phones.join(", ")}
           </div>
-          <div style="font-size: 10px; color: #64748b; margin-bottom: 6px;">
-            🏢 <b>Facility:</b> ${loc.areaSqFt} sq.ft (${loc.tenure}) | <b>Staff:</b> ${loc.staffCount} Engineers
+          <div style="font-size: 10px; color: #64748b; margin-bottom: 8px;">
+            🏢 <b>Facility:</b> ${loc.areaSqFt} sq.ft (${loc.tenure}) | <b>Staff:</b> ${loc.staffCount}
           </div>
-          <div style="background-color: #f1f5f9; padding: 6px; border-radius: 6px; font-size: 10px; color: #334155;">
+          <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 6px; border-radius: 6px; font-size: 10px; color: #334155; margin-bottom: 8px;">
             <b>Coverage:</b> ${loc.coveredAreas.slice(0, 4).join(", ")}${loc.coveredAreas.length > 4 ? ` +${loc.coveredAreas.length - 4} more` : ""}
           </div>
+          <a
+            href="${googleMapsUrl}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; padding: 7px 12px; background-color: #0B4EA2; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 11px; font-weight: 700; text-align: center; box-sizing: border-box;"
+          >
+            🧭 Get Directions in Google Maps ↗
+          </a>
         </div>
       `;
 
@@ -122,7 +130,6 @@ export const LocationMap: React.FC<LocationMapProps> = ({
       markersRef.current.set(loc.id, marker);
     });
 
-    // Auto-pan / fit bounds if multiple locations, or pan to selected
     if (selectedLocation) {
       const marker = markersRef.current.get(selectedLocation.id);
       if (marker) {
@@ -133,13 +140,13 @@ export const LocationMap: React.FC<LocationMapProps> = ({
   }, [locations, selectedLocation, onSelectLocation]);
 
   return (
-    <div className="relative w-full h-[450px] lg:h-[620px] rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+    <div className="relative w-full h-[450px] lg:h-[620px] rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
       <div ref={mapContainerRef} className="w-full h-full z-0" />
       
-      {/* Map Overlay Badge */}
-      <div className="absolute top-4 left-4 z-[400] bg-slate-900/90 border border-slate-800 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-lg pointer-events-none">
-        <span className="text-xs font-semibold text-cyan-400 flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+      {/* Map Badge */}
+      <div className="absolute top-4 left-4 z-[400] bg-white/95 border border-slate-200 px-3 py-1.5 rounded-lg shadow-sm pointer-events-none">
+        <span className="text-xs font-semibold text-blue-800 flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping" />
           Interactive Hub Map ({locations.length} Filtered Centers)
         </span>
       </div>

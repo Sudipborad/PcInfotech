@@ -13,10 +13,8 @@ import {
   Phone, 
   Building, 
   Users, 
-  ExternalLink, 
-  Filter,
-  CheckCircle2,
-  Navigation
+  Navigation,
+  ArrowUpRight
 } from "lucide-react";
 
 // Dynamic import with SSR disabled for Leaflet Map
@@ -25,8 +23,8 @@ const LocationMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="w-full h-[450px] lg:h-[620px] rounded-2xl bg-slate-900 border border-slate-800 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-3">
-        <MapPin className="w-8 h-8 text-cyan-500 animate-bounce" />
+      <div className="w-full h-[450px] lg:h-[620px] rounded-xl bg-white border border-slate-200 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-3">
+        <MapPin className="w-8 h-8 text-blue-600 animate-bounce" />
         <span className="text-sm font-medium">Loading Interactive Service Center Map...</span>
       </div>
     ),
@@ -63,24 +61,24 @@ export const Locations: React.FC = () => {
   }, [selectedState, selectedBrand, searchQuery]);
 
   return (
-    <section id="locations" className="py-24 bg-slate-950 text-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="locations" className="py-20 bg-slate-50 text-slate-800 border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-cyan-400 mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 mb-3">
             <MapPin className="w-3.5 h-3.5" />
             <span>Interactive Geographic Network</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
             13 Verified Service Centers & Coverage
           </h2>
-          <p className="mt-3 text-slate-400 text-sm sm:text-base">
-            Click any service center card to focus the map, or select a marker on the map to inspect full facility details, staff count, and district coverage.
+          <p className="mt-2 text-slate-600 text-sm sm:text-base">
+            Click any service center to focus on the map and get instant turn-by-turn directions in Google Maps.
           </p>
         </div>
 
         {/* Filter & Search Bar */}
-        <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 mb-8 shadow-xl backdrop-blur-md">
+        <div className="bg-white border border-slate-200 rounded-xl p-4 mb-8 shadow-xs">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
             {/* Search Input */}
             <div className="md:col-span-5 relative">
@@ -90,7 +88,7 @@ export const Locations: React.FC = () => {
                 placeholder="Search city, district, address, or center..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950 text-slate-200 placeholder-slate-500 border border-slate-800 text-xs focus:outline-none focus:border-cyan-500 transition-colors"
+                className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-50 text-slate-800 placeholder-slate-400 border border-slate-200 text-xs focus:outline-none focus:border-blue-600 transition-colors"
               />
             </div>
 
@@ -100,10 +98,10 @@ export const Locations: React.FC = () => {
                 <button
                   key={state}
                   onClick={() => setSelectedState(state)}
-                  className={`px-3 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition-colors ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
                     selectedState === state
-                      ? "bg-cyan-500 text-slate-950 font-bold"
-                      : "bg-slate-950 text-slate-300 hover:text-white border border-slate-800"
+                      ? "bg-blue-700 text-white shadow-xs"
+                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                   }`}
                 >
                   {state}
@@ -117,10 +115,10 @@ export const Locations: React.FC = () => {
                 <button
                   key={brand}
                   onClick={() => setSelectedBrand(brand)}
-                  className={`px-2.5 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition-colors ${
+                  className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
                     selectedBrand === brand
-                      ? "bg-sky-400 text-slate-950 font-bold"
-                      : "bg-slate-950 text-slate-300 hover:text-white border border-slate-800"
+                      ? "bg-slate-800 text-white shadow-xs"
+                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                   }`}
                 >
                   {brand}
@@ -130,9 +128,9 @@ export const Locations: React.FC = () => {
           </div>
         </div>
 
-        {/* Two-Panel Layout: Synchronized Map (Left) and Location List (Right) */}
+        {/* Two-Panel Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Panel: Interactive Leaflet Map (7 cols) */}
+          {/* Left Panel: Map (7 cols) */}
           <div className="lg:col-span-7 sticky top-24">
             <LocationMap
               locations={filteredLocations}
@@ -140,23 +138,34 @@ export const Locations: React.FC = () => {
               onSelectLocation={(loc) => setSelectedLocation(loc)}
             />
 
-            {/* Selected Location Quick Snapshot beneath map */}
+            {/* Selected Location Summary Bar below map */}
             {selectedLocation && (
-              <div className="mt-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-xs flex flex-wrap items-center justify-between gap-3">
+              <div className="mt-4 p-4 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <span className="text-[11px] font-semibold text-cyan-400 uppercase tracking-wider block">
-                    Focused Center
+                  <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider block">
+                    Focused Service Center
                   </span>
-                  <span className="font-bold text-white text-sm">
+                  <span className="font-bold text-slate-900 text-sm">
                     {selectedLocation.name} ({selectedLocation.city})
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${selectedLocation.coordinates[0]},${selectedLocation.coordinates[1]}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-semibold shadow-xs transition-colors"
+                  >
+                    <Navigation className="w-3.5 h-3.5" />
+                    <span>Get Directions in Google Maps</span>
+                    <ArrowUpRight className="w-3 h-3 opacity-80" />
+                  </a>
+
                   <a
                     href={`tel:${selectedLocation.phones[0]}`}
-                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-semibold transition-colors"
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold transition-colors"
                   >
-                    <Phone className="w-3.5 h-3.5" />
+                    <Phone className="w-3.5 h-3.5 text-blue-600" />
                     <span>Call Center</span>
                   </a>
                 </div>
@@ -164,79 +173,96 @@ export const Locations: React.FC = () => {
             )}
           </div>
 
-          {/* Right Panel: Scrollable Location Cards (5 cols) */}
-          <div className="lg:col-span-5 space-y-4 max-h-[750px] overflow-y-auto pr-1">
-            <div className="flex items-center justify-between text-xs text-slate-400 pb-2 border-b border-slate-800">
+          {/* Right Panel: Location Cards (5 cols) */}
+          <div className="lg:col-span-5 space-y-3.5 max-h-[750px] overflow-y-auto pr-1">
+            <div className="flex items-center justify-between text-xs text-slate-500 pb-2 border-b border-slate-200">
               <span>Showing {filteredLocations.length} locations</span>
-              <span className="text-cyan-400">Click to focus on map</span>
+              <span className="text-blue-700 font-medium">Click to focus on map</span>
             </div>
 
             {filteredLocations.length === 0 ? (
-              <div className="p-8 text-center rounded-2xl bg-slate-900/40 border border-slate-800 text-slate-400 text-xs">
+              <div className="p-8 text-center rounded-xl bg-white border border-slate-200 text-slate-500 text-xs">
                 No service centers match your filter criteria. Try selecting &quot;All States&quot;.
               </div>
             ) : (
               filteredLocations.map((loc) => {
                 const isSelected = selectedLocation?.id === loc.id;
+                const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${loc.coordinates[0]},${loc.coordinates[1]}`;
+
                 return (
                   <div
                     key={loc.id}
                     onClick={() => setSelectedLocation(loc)}
-                    className={`p-4 rounded-xl cursor-pointer transition-all duration-200 border ${
+                    className={`p-4 rounded-xl cursor-pointer transition-all border ${
                       isSelected
-                        ? "bg-slate-900 border-cyan-400 shadow-xl shadow-cyan-950/50 scale-[1.01]"
-                        : "bg-slate-900/50 border-slate-800/90 hover:bg-slate-900/80 hover:border-slate-700"
+                        ? "bg-white border-blue-600 shadow-md ring-1 ring-blue-600/30"
+                        : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-xs"
                     }`}
                   >
                     <div className="flex items-start justify-between gap-2 mb-1.5">
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="text-xs font-black text-cyan-400 uppercase tracking-wider">
+                          <span className="text-xs font-black text-blue-700 uppercase tracking-wider">
                             {loc.city}
                           </span>
-                          <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-300">
+                          <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-600">
                             {loc.state}
                           </span>
                         </div>
-                        <h4 className="text-sm font-bold text-white mt-1">
+                        <h4 className="text-sm font-bold text-slate-900 mt-1">
                           {loc.name}
                         </h4>
                       </div>
 
-                      <span className="text-[10px] px-2 py-0.5 rounded-full font-semibold bg-cyan-950 text-cyan-300 border border-cyan-800 whitespace-nowrap">
+                      <span className="text-[10px] px-2 py-0.5 rounded-full font-semibold bg-blue-50 text-blue-800 border border-blue-200 whitespace-nowrap">
                         Est. {loc.establishedYear}
                       </span>
                     </div>
 
-                    <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       {loc.address}
                     </p>
 
-                    <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-slate-400 mt-3 pt-3 border-t border-slate-800/80">
-                      <div className="flex items-center gap-1 text-slate-200 font-medium">
-                        <Phone className="w-3 h-3 text-cyan-400" />
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-slate-500 mt-3 pt-2.5 border-t border-slate-100">
+                      <div className="flex items-center gap-1 text-slate-800 font-medium">
+                        <Phone className="w-3 h-3 text-blue-600" />
                         <span>{loc.phones[0]}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Building className="w-3 h-3 text-slate-500" />
+                        <Building className="w-3 h-3 text-slate-400" />
                         <span>{loc.areaSqFt} sq.ft ({loc.tenure})</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Users className="w-3 h-3 text-slate-500" />
+                        <Users className="w-3 h-3 text-slate-400" />
                         <span>{loc.staffCount} Staff</span>
                       </div>
                     </div>
 
                     {/* Coverage tags */}
-                    <div className="mt-3 bg-slate-950/70 p-2.5 rounded-lg border border-slate-800/80 text-[10px] text-slate-400">
-                      <span className="font-semibold text-slate-300 block mb-1">
-                        District & Municipal Coverage:
+                    <div className="mt-2.5 bg-slate-50 p-2 rounded-lg border border-slate-100 text-[10px] text-slate-600">
+                      <span className="font-semibold text-slate-800 block mb-0.5">
+                        District Coverage:
                       </span>
                       <span>{loc.coveredAreas.join(", ")}</span>
                     </div>
 
-                    <div className="mt-2 text-[10px] text-cyan-300/80 italic">
-                      {loc.specialization}
+                    {/* Action Row: Get Directions in Google Maps & Call */}
+                    <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between gap-2">
+                      <span className="text-[10px] text-blue-700 italic truncate">
+                        {loc.specialization}
+                      </span>
+
+                      <a
+                        href={googleMapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-colors whitespace-nowrap"
+                        title="Get directions to this service center in Google Maps"
+                      >
+                        <Navigation className="w-3 h-3" />
+                        <span>Get Directions ↗</span>
+                      </a>
                     </div>
                   </div>
                 );

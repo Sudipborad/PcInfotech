@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Menu, X, ShieldCheck, MapPin, Phone, ArrowUpRight } from "lucide-react";
-import { companyData } from "@/data/company";
+import { Menu, X, MapPin, Phone, ArrowUpRight } from "lucide-react";
 
 interface NavItem {
   name: string;
@@ -26,15 +25,14 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      setScrolled(window.scrollY > 20);
 
-      // Simple active section detection
       const sections = navItems.map((item) => item.href.substring(1));
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 140) {
+          if (rect.top <= 120) {
             setActiveSection(sections[i]);
             break;
           }
@@ -48,44 +46,36 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? "bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80 shadow-2xl py-3"
-          : "bg-transparent py-5"
+          ? "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-2.5"
+          : "bg-white border-b border-slate-100 py-3"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo / Organization identity */}
-          <a href="#overview" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 via-sky-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-200">
-              <span className="font-extrabold text-white text-base tracking-tighter">PC</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-base sm:text-lg font-bold text-white tracking-tight flex items-center gap-1.5">
-                {companyData.name}
-                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-cyan-950 text-cyan-400 border border-cyan-800">
-                  Est. 1995
-                </span>
-              </span>
-              <span className="text-[11px] text-slate-400 font-medium hidden sm:inline">
-                Authorized Service Provider • HP & Canon ASC
-              </span>
-            </div>
+          {/* Official Logo */}
+          <a href="#overview" className="flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/PCIS_logo_light_mode.svg"
+              alt="PC Infotech Solutions"
+              className="h-10 sm:h-12 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-slate-900/60 border border-slate-800/70 rounded-full px-4 py-1.5 backdrop-blur-sm shadow-inner">
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-50 border border-slate-200 rounded-full px-3 py-1">
             {navItems.map((item) => {
               const isActive = activeSection === item.href.substring(1);
               return (
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`px-3 py-1.5 text-xs font-medium rounded-full transition-colors duration-200 ${
+                  className={`px-3 py-1.5 text-xs font-medium rounded-full transition-colors ${
                     isActive
-                      ? "text-cyan-400 bg-cyan-950/60 shadow-sm border border-cyan-800/50"
-                      : "text-slate-300 hover:text-white hover:bg-slate-800/50"
+                      ? "text-blue-700 bg-white shadow-sm border border-slate-200 font-semibold"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                   }`}
                 >
                   {item.name}
@@ -94,19 +84,19 @@ export const Navbar: React.FC = () => {
             })}
           </nav>
 
-          {/* Action CTAs */}
+          {/* Right Action CTAs */}
           <div className="hidden md:flex items-center gap-3">
             <a
               href="tel:02024495041"
-              className="flex items-center gap-1.5 text-xs text-slate-300 hover:text-cyan-300 transition-colors py-2 px-3 rounded-lg border border-slate-800 hover:border-cyan-800 bg-slate-900/40"
+              className="flex items-center gap-1.5 text-xs font-medium text-slate-700 hover:text-blue-700 py-2 px-3 rounded-lg border border-slate-200 hover:border-blue-300 bg-white transition-colors"
               title="Pune HQ Support Desk"
             >
-              <Phone className="w-3.5 h-3.5 text-cyan-400" />
+              <Phone className="w-3.5 h-3.5 text-blue-600" />
               <span>020 24495041</span>
             </a>
             <a
               href="#locations"
-              className="relative inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-xl text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 shadow-md shadow-cyan-600/20 hover:shadow-cyan-500/30 transition-all duration-200 active:scale-95"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-colors"
             >
               <MapPin className="w-3.5 h-3.5" />
               <span>13 Centers</span>
@@ -118,14 +108,14 @@ export const Navbar: React.FC = () => {
           <div className="flex lg:hidden items-center gap-2">
             <a
               href="#locations"
-              className="inline-flex items-center gap-1 text-[11px] font-semibold px-3 py-1.5 rounded-lg text-white bg-cyan-600"
+              className="inline-flex items-center gap-1 text-[11px] font-semibold px-3 py-1.5 rounded-lg text-white bg-blue-700"
             >
               <MapPin className="w-3 h-3" />
               <span>Centers</span>
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/60 focus:outline-none"
+              className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -136,34 +126,34 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-slate-950/95 border-b border-slate-800 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2 animate-in fade-in slide-in-from-top-4 duration-200">
-          <div className="grid grid-cols-2 gap-2 pb-3 border-b border-slate-800">
+        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-lg">
+          <div className="grid grid-cols-2 gap-1 pb-3 border-b border-slate-100">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 text-sm font-medium text-slate-200 hover:text-cyan-400 hover:bg-slate-900 rounded-lg transition-colors"
+                className="px-3 py-2 text-xs font-medium text-slate-700 hover:text-blue-700 hover:bg-slate-50 rounded-lg transition-colors"
               >
                 {item.name}
               </a>
             ))}
           </div>
-          <div className="pt-2 flex flex-col gap-2">
+          <div className="flex flex-col gap-2 pt-1">
             <a
               href="tel:02024495041"
-              className="flex items-center justify-center gap-2 text-xs font-semibold py-2.5 rounded-lg bg-slate-900 text-slate-200 border border-slate-800"
+              className="flex items-center justify-center gap-2 text-xs font-semibold py-2.5 rounded-lg bg-slate-50 text-slate-800 border border-slate-200"
             >
-              <Phone className="w-4 h-4 text-cyan-400" />
+              <Phone className="w-4 h-4 text-blue-600" />
               <span>Support: 020 24495041</span>
             </a>
             <a
               href="#locations"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 text-xs font-semibold py-2.5 rounded-lg bg-cyan-600 text-white shadow-lg shadow-cyan-600/30"
+              className="flex items-center justify-center gap-2 text-xs font-semibold py-2.5 rounded-lg bg-blue-700 text-white shadow-sm"
             >
               <MapPin className="w-4 h-4" />
-              <span>Explore 13 Service Centers</span>
+              <span>Find 13 Service Centers</span>
             </a>
           </div>
         </div>

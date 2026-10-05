@@ -5,7 +5,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#020617",
+  themeColor: "#0B4EA2",
 };
 
 export const metadata: Metadata = {
@@ -42,8 +42,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className="bg-slate-950 text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-slate-950">
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-slate-50 text-slate-800 min-h-screen selection:bg-blue-600 selection:text-white">
         {children}
       </body>
     </html>

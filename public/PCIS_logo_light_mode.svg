@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500">
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B4EA2"/>
+      <stop offset="1" stop-color="#18A9E8"/>
+    </linearGradient>
+    <linearGradient id="redOrange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E30613"/>
+      <stop offset="1" stop-color="#FF8A00"/>
+    </linearGradient>
+    <linearGradient id="orangeRed" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB52E"/>
+      <stop offset="1" stop-color="#E53935"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="500" fill="#FFFFFF"/>
+
+  <!-- Orbit / motion swooshes -->
+  <path d="M95 300 C245 410 470 425 650 365"
+        fill="none" stroke="url(#redOrange)" stroke-width="18"
+        stroke-linecap="round"/>
+  <path d="M610 105 C790 45 1000 75 1110 155"
+        fill="none" stroke="url(#blue)" stroke-width="18"
+        stroke-linecap="round"/>
+  <path d="M1088 155 C1115 190 1110 245 1070 280"
+        fill="none" stroke="#FF6A00" stroke-width="9"
+        stroke-linecap="round"/>
+
+  <!-- P -->
+  <path d="M185 155 H410
+           C485 155 520 195 520 245
+           C520 295 480 330 415 330 H285
+           V390 L185 350 Z
+           M285 225 V270 H400
+           C420 270 430 260 430 247
+           C430 234 420 225 400 225 Z"
+        fill="url(#blue)"/>
+
+  <!-- C -->
+  <path d="M735 155 H565
+           C505 155 470 195 470 250
+           C470 305 505 345 565 345 H735
+           V285 H585
+           C565 285 550 273 550 250
+           C550 227 565 215 585 215 H735 Z"
+        fill="url(#redOrange)"/>
+
+  <!-- I -->
+  <path d="M770 155 H850 V345 H770 Z
+           M770 155 L850 105 V155 H770 Z
+           M770 345 L850 295 V345 H770 Z"
+        fill="url(#blue)"/>
+
+  <!-- S -->
+  <path d="M920 155 H1090 V215 H955
+           C940 215 935 220 935 230
+           C935 239 941 244 955 244 H1045
+           C1095 244 1120 270 1120 300
+           C1120 330 1095 345 1045 345 H890 V285 H1030
+           C1045 285 1050 280 1050 272
+           C1050 264 1045 260 1030 260 H950
+           C900 260 875 235 875 205
+           C875 175 895 155 920 155 Z"
+        fill="url(#orangeRed)"/>
+
+  <!-- Subtitle -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="38"
+     font-weight="600" letter-spacing="5">
+    <text x="600" y="425" text-anchor="middle" fill="#0B4EA2">
+      PC INFOTECH <tspan fill="#F15A24">SOLUTIONS</tspan>
+    </text>
+  </g>
+
+  <!-- Accent lines -->
+  <path d="M85 413 H205" stroke="#E53935" stroke-width="4"/>
+  <path d="M995 413 H1115" stroke="#F15A24" stroke-width="4"/>
+</svg>
