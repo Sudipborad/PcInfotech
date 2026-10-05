@@ -152,28 +152,59 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Compact Bottom Partner Badges */}
+        {/* Bottom Partner Logos Strip */}
         <div className="mt-8 pt-6 border-t border-slate-200">
-          <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
               Authorized Brands & Capabilities:
             </span>
-            <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-700">
-              <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200">
-                <strong className="text-blue-700">HP</strong> Authorized Partner
-              </span>
-              <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200">
-                <strong className="text-red-600">Canon</strong> ASC
-              </span>
-              <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200">
-                <strong className="text-blue-900">EPSON</strong> Spares Stockist
-              </span>
-              <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200">
-                <strong className="text-slate-800">TVSE</strong> Distributor
-              </span>
-              <span className="px-2.5 py-1 rounded-md bg-white border border-slate-200">
-                <strong className="text-blue-600">Samsung</strong> Support
-              </span>
+            <div className="flex flex-wrap items-center gap-2.5">
+              {/* HP */}
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/hp.svg" alt="HP Logo" className="h-5 w-5 object-contain" />
+                <span className="text-xs font-semibold text-slate-800">HP</span>
+                <span className="text-[10px] text-blue-700 font-medium">Authorized</span>
+              </div>
+
+              {/* Canon */}
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/canon.svg" alt="Canon Logo" className="h-4 w-auto object-contain" />
+                <span className="text-[10px] text-red-600 font-semibold">ASC</span>
+              </div>
+
+              {/* EPSON */}
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/epson.svg" alt="EPSON Logo" className="h-4 w-auto object-contain" />
+                <span className="text-[10px] text-slate-500 font-medium">Stockist</span>
+              </div>
+
+              {/* TVSE */}
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/tvse.svg" alt="TVSE Logo" className="h-5 w-auto object-contain" />
+                <span className="text-[10px] text-slate-500 font-medium">Distributor</span>
+              </div>
+
+              {/* Samsung */}
+              <div className="flex items-center px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/samsung.svg" alt="Samsung Logo" className="h-5 w-auto object-contain" />
+              </div>
+
+              {/* Redington */}
+              <div className="flex items-center px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/redington.svg" alt="Redington Logo" className="h-4 w-auto object-contain" />
+              </div>
+
+              {/* WeP */}
+              <div className="flex items-center px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/wep.svg" alt="WeP Logo" className="h-5 w-auto object-contain" />
+              </div>
             </div>
           </div>
         </div>
