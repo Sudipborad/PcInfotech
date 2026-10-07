@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { ServiceCenter } from "@/data/locations";
+import { ServiceCenter, getDirectionsUrl } from "@/data/locations";
 
 interface LocationMapProps {
   locations: ServiceCenter[];
@@ -61,7 +61,7 @@ export const LocationMap: React.FC<LocationMapProps> = ({
 
     locations.forEach((loc) => {
       const isSelected = selectedLocation?.id === loc.id;
-      const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${loc.coordinates[0]},${loc.coordinates[1]}`;
+      const googleMapsUrl = getDirectionsUrl(loc);
 
       // Custom HTML Marker Pin in Brand Colors
       const customIcon = L.divIcon({

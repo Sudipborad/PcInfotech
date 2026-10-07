@@ -5,7 +5,8 @@ import {
   serviceCentersData, 
   ServiceCenter, 
   statesList, 
-  brandList 
+  brandList,
+  getDirectionsUrl
 } from "@/data/locations";
 import { 
   MapPin, 
@@ -149,7 +150,7 @@ export const Locations: React.FC = () => {
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
                   <a
-                    href={`https://www.google.com/maps/dir/?api=1&destination=${selectedLocation.coordinates[0]},${selectedLocation.coordinates[1]}`}
+                    href={getDirectionsUrl(selectedLocation)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-semibold shadow-xs transition-colors"
@@ -185,7 +186,7 @@ export const Locations: React.FC = () => {
             ) : (
               filteredLocations.map((loc) => {
                 const isSelected = selectedLocation?.id === loc.id;
-                const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${loc.coordinates[0]},${loc.coordinates[1]}`;
+                const googleMapsUrl = getDirectionsUrl(loc);
 
                 return (
                   <div
