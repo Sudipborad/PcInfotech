@@ -18,7 +18,7 @@ const GrowthChart = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="w-full h-80 rounded-xl bg-white border border-slate-200 animate-pulse flex items-center justify-center text-slate-500 text-sm">
+      <div className="w-full h-80 rounded-2xl bg-white border border-slate-200 animate-pulse flex items-center justify-center text-slate-500 text-sm">
         Loading growth visualization charts...
       </div>
     ),
@@ -26,60 +26,76 @@ const GrowthChart = dynamic(
 );
 
 const iconMap: Record<string, React.ReactNode> = {
-  Headset: <Headset className="w-5 h-5 text-amber-600" />,
-  Users: <Users className="w-5 h-5 text-blue-700" />,
+  Headset: <Headset className="w-5 h-5 text-blue-700" />,
+  Users: <Users className="w-5 h-5 text-indigo-700" />,
   Network: <Network className="w-5 h-5 text-blue-600" />,
-  MapPin: <MapPin className="w-5 h-5 text-emerald-600" />,
-  Building2: <Building2 className="w-5 h-5 text-indigo-600" />,
-  CalendarCheck2: <CalendarCheck2 className="w-5 h-5 text-rose-600" />,
+  MapPin: <MapPin className="w-5 h-5 text-emerald-700" />,
+  Building2: <Building2 className="w-5 h-5 text-amber-700" />,
+  CalendarCheck2: <CalendarCheck2 className="w-5 h-5 text-rose-700" />,
 };
 
 export const Growth: React.FC = () => {
   return (
-    <section id="growth" className="py-20 bg-slate-50 text-slate-800 border-b border-slate-200">
+    <section id="growth" className="py-20 lg:py-24 bg-white text-slate-800 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 mb-3">
             <TrendingUp className="w-3.5 h-3.5" />
-            <span>Factual Organizational Expansion</span>
+            <span>Factual Organizational Scaling</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-            Growth Story & Operational Scaling
+          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
+            How We Grew: Data-Backed Expansion (1995–2020)
           </h2>
-          <p className="mt-2 text-slate-600 text-sm sm:text-base">
-            From 4 employees and 200 service calls in 1995 to over 100+ hardware engineers, 13 certified service centers, and 2,500+ documented calls.
+          <p className="mt-2 text-slate-600 text-sm sm:text-base leading-relaxed">
+            Documented progression from a 4-engineer local workshop into an interstate network handling thousands of mission-critical calls annually.
           </p>
         </div>
 
-        {/* 6 Key Stat Banners */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
-          {keyImpactMetrics.map((metric) => (
-            <div
-              key={metric.label}
-              className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between"
-            >
-              <div className="mb-2">
-                <div className="p-2 rounded-lg bg-slate-50 inline-block border border-slate-100">
-                  {iconMap[metric.icon]}
-                </div>
-              </div>
-              <div>
-                <span className="text-xl sm:text-2xl font-black text-slate-900 block">
-                  {metric.value}
-                </span>
-                <span className="text-xs font-bold text-slate-700 block mt-0.5">
-                  {metric.label}
-                </span>
-                <p className="text-[10px] text-slate-500 mt-1 line-clamp-2">
-                  {metric.source}
-                </p>
-              </div>
+        {/* 4 Primary Highlight KPI Tiles (Spacious & Clean) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Service Volume</span>
+              <Headset className="w-4 h-4 text-blue-700" />
             </div>
-          ))}
+            <span className="text-3xl font-black text-slate-900 block">2,500+</span>
+            <span className="text-xs text-slate-600 font-medium block mt-1">Documented Calls/Year</span>
+            <span className="text-[11px] text-blue-700 font-semibold mt-2 block">12.5x growth since 1995</span>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Engineering Depth</span>
+              <Users className="w-4 h-4 text-indigo-700" />
+            </div>
+            <span className="text-3xl font-black text-slate-900 block">100+</span>
+            <span className="text-xs text-slate-600 font-medium block mt-1">Hardware &amp; Support Engineers</span>
+            <span className="text-[11px] text-indigo-700 font-semibold mt-2 block">Started with 4 specialists</span>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Hub Footprint</span>
+              <Building2 className="w-4 h-4 text-emerald-700" />
+            </div>
+            <span className="text-3xl font-black text-slate-900 block">13 Hubs</span>
+            <span className="text-xs text-slate-600 font-medium block mt-1">GJ, MH &amp; MP Direct Centers</span>
+            <span className="text-[11px] text-emerald-700 font-semibold mt-2 block">10,000+ sq.ft total lab space</span>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Spares Logistics</span>
+              <Network className="w-4 h-4 text-amber-700" />
+            </div>
+            <span className="text-3xl font-black text-slate-900 block">1,000+</span>
+            <span className="text-xs text-slate-600 font-medium block mt-1">IT Dealers in 8 States</span>
+            <span className="text-[11px] text-amber-700 font-semibold mt-2 block">EPSON &amp; TVSE Bulk Stockist</span>
+          </div>
         </div>
 
-        {/* Data Visualization */}
+        {/* Data Visualization Chart Component */}
         <GrowthChart />
       </div>
     </section>

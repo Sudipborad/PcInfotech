@@ -63,32 +63,32 @@ export const GrowthChart: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-white border border-slate-200 rounded-xl p-5 sm:p-7 shadow-xs">
+    <div className="w-full bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-xs">
       {/* Metric Mode Switcher */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-200">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200/80">
         <div>
-          <h4 className="text-base font-bold text-slate-900">
-            Growth Metrics Visualization
+          <h4 className="text-base sm:text-lg font-black text-slate-900">
+            Interactive Operational Progression
           </h4>
           <p className="text-xs text-slate-500">
-            Official operational data from 1995 founding through multi-state expansion
+            Switch metric tabs below to explore calls, certified engineers, hubs, and facility area.
           </p>
         </div>
 
         <div className="flex flex-wrap gap-1.5">
           <button
             onClick={() => setMetricMode("combined")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
               metricMode === "combined"
                 ? "bg-blue-700 text-white shadow-xs"
                 : "bg-slate-100 text-slate-700 hover:bg-slate-200"
             }`}
           >
-            Calls & Manpower
+            Calls &amp; Manpower
           </button>
           <button
             onClick={() => setMetricMode("calls")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
               metricMode === "calls"
                 ? "bg-amber-600 text-white shadow-xs"
                 : "bg-slate-100 text-slate-700 hover:bg-slate-200"
@@ -98,27 +98,27 @@ export const GrowthChart: React.FC = () => {
           </button>
           <button
             onClick={() => setMetricMode("manpower")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
               metricMode === "manpower"
                 ? "bg-blue-600 text-white shadow-xs"
                 : "bg-slate-100 text-slate-700 hover:bg-slate-200"
             }`}
           >
-            Manpower
+            Engineers
           </button>
           <button
             onClick={() => setMetricMode("centers")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
               metricMode === "centers"
                 ? "bg-indigo-600 text-white shadow-xs"
                 : "bg-slate-100 text-slate-700 hover:bg-slate-200"
             }`}
           >
-            Service Centers
+            Hubs Count
           </button>
           <button
             onClick={() => setMetricMode("facilityArea")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
               metricMode === "facilityArea"
                 ? "bg-emerald-600 text-white shadow-xs"
                 : "bg-slate-100 text-slate-700 hover:bg-slate-200"
