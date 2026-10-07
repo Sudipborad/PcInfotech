@@ -128,9 +128,25 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Pillar 2: Chip Level Labs */}
-            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between shadow-xs">
+            {/* Pillar 2: Chip Level Labs with Authentic Workbench Photo */}
+            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between shadow-xs overflow-hidden">
               <div>
+                <div className="relative h-44 -mx-8 -mt-8 mb-6 overflow-hidden bg-slate-900 group">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/hardware-lab-workbench.jpg"
+                    alt="SMD Logic Card Micro-Soldering Lab Workbench"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-4 text-[10px] font-bold text-white bg-indigo-700/90 backdrop-blur-sm px-2.5 py-0.5 rounded-full shadow-xs">
+                    In-House Component Rework Lab
+                  </span>
+                  <span className="absolute top-3 right-4 text-[10px] font-bold px-2 py-0.5 rounded-full bg-black/60 text-indigo-300 backdrop-blur-sm border border-indigo-400/30">
+                    Proprietary Jigs
+                  </span>
+                </div>
+
                 <div className="flex items-center justify-between mb-4">
                   <div className="p-3 rounded-xl bg-indigo-700 text-white shadow-2xs">
                     <Cpu className="w-6 h-6" />
@@ -263,25 +279,52 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {repairProcess.map((proc) => (
-              <div
-                key={proc.step}
-                className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex flex-col justify-between"
-              >
-                <div>
-                  <span className="text-3xl font-black text-blue-700 font-mono block mb-3">
-                    {proc.step}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left: Bench Diagnostics Photo (5 cols) */}
+            <div className="lg:col-span-5">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm group bg-slate-900">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/printer-diagnostics-service.jpg"
+                  alt="Technician performing bench diagnostic QA on printer hardware"
+                  className="w-full h-[360px] sm:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10 text-white space-y-1">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-blue-300 block">
+                    Quality Bench Testing
                   </span>
-                  <h3 className="text-base font-bold text-slate-900 mb-2">
-                    {proc.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {proc.description}
+                  <h4 className="text-sm font-bold text-white">
+                    Test-Pattern Calibration &amp; Thermal Burn-In
+                  </h4>
+                  <p className="text-[11px] text-slate-300">
+                    Zero-defect verification before release back to corporate client fleets.
                   </p>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Right: 4-Step Progressive Lifecycle (7 cols) */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {repairProcess.map((proc) => (
+                <div
+                  key={proc.step}
+                  className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex flex-col justify-between"
+                >
+                  <div>
+                    <span className="text-2xl font-black text-blue-700 font-mono block mb-2">
+                      {proc.step}
+                    </span>
+                    <h3 className="text-sm font-bold text-slate-900 mb-1.5">
+                      {proc.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      {proc.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,32 +1,36 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { Compass, ArrowRight, GraduationCap } from "lucide-react";
+import { ArrowRight, GraduationCap, CheckCircle2 } from "lucide-react";
 import { companyData } from "@/data/company";
 
 const summaryTimeline = [
   {
     year: "1995",
+    phase: "Phase 1: Inception",
     title: "Founding in Baroda",
     subtitle: "Technocrat Chetan Kumbhani begins operations with 4 engineers.",
     stat: "4 Staff • 200 Calls"
   },
   {
-    year: "2000s",
-    title: "Regional Expansion",
-    subtitle: "Direct branches in Ahmedabad, Surat & proprietary logic labs.",
+    year: "2002",
+    phase: "Phase 2: Regional Hubs",
+    title: "Gujarat Corridor Expansion",
+    subtitle: "Direct branches in Ahmedabad & Surat; proprietary logic labs established.",
     stat: "GJ Corridor Network"
   },
   {
-    year: "2015 & 2018",
-    title: "National Canon Honors",
-    subtitle: "Conferred Canon Best Partner award twice for SLA excellence.",
+    year: "2008 & 2015",
+    phase: "Phase 3: OEM Honors",
+    title: "HP & Canon National Accreditations",
+    subtitle: "HP Authorized Partner; 2x Canon Best Partner Winner at Goa Convention.",
     stat: "2x National Winner"
   },
   {
     year: "Present",
-    title: "Interstate Footprint",
-    subtitle: "13 certified hubs across GJ, MH & MP with 100+ specialists.",
+    phase: "Phase 4: Scale",
+    title: "13 Hubs & 8-State Logistics",
+    subtitle: "Certified physical hubs across GJ, MH & MP with 100+ hardware specialists.",
     stat: "13 Hubs • 100+ Staff"
   }
 ];
@@ -59,7 +63,7 @@ export const HomeJourney: React.FC = () => {
         </div>
 
         {/* Core Philosophy Callout */}
-        <div className="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-7 shadow-xs mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-7 shadow-xs mb-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider block">
               Founding Principle
@@ -74,35 +78,46 @@ export const HomeJourney: React.FC = () => {
           </div>
         </div>
 
-        {/* 4 Summary Timeline Nodes */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {summaryTimeline.map((item, idx) => (
-            <div
-              key={item.year}
-              className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xs flex flex-col justify-between hover:border-blue-300 transition-all"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-2xl font-black text-blue-700 font-mono">
-                    {item.year}
-                  </span>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700">
-                    Phase {idx + 1}
-                  </span>
-                </div>
-                <h3 className="text-sm font-bold text-slate-900 mb-1.5">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                  {item.subtitle}
-                </p>
-              </div>
+        {/* Progressive Connected Horizontal Timeline */}
+        <div className="relative">
+          {/* Desktop Connecting Line */}
+          <div className="hidden lg:block absolute top-6 left-12 right-12 h-0.5 bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 z-0" />
 
-              <div className="pt-3 border-t border-slate-100 text-[11px] font-bold text-slate-500">
-                {item.stat}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            {summaryTimeline.map((item, idx) => (
+              <div
+                key={item.year}
+                className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xs flex flex-col justify-between hover:border-blue-300 transition-all group"
+              >
+                <div>
+                  {/* Step Marker Dot */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-11 h-11 rounded-full bg-blue-50 border-2 border-blue-600 flex items-center justify-center text-xs font-black text-blue-800 shadow-2xs group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                      0{idx + 1}
+                    </div>
+                    <span className="text-xs font-mono font-bold text-blue-700">
+                      {item.year}
+                    </span>
+                  </div>
+
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                    {item.phase}
+                  </span>
+                  <h3 className="text-base font-bold text-slate-900 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed mb-4">
+                    {item.subtitle}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                  <span className="font-semibold text-slate-700">{item.stat}</span>
+                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

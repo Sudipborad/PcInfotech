@@ -89,74 +89,58 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Visual Operational Highlights (5 cols) */}
+          {/* Right Column: High-Resolution Hardware Lab Showcase (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-xs space-y-5">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <div>
-                  <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block">
-                    Operational Scope
-                  </span>
-                  <span className="text-[11px] text-slate-500">
-                    Gujarat • Maharashtra • Madhya Pradesh
-                  </span>
-                </div>
-                <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
-                  Active Network
+            <div className="relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-md group bg-slate-900">
+              {/* Photo */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/hardware-lab-workbench.jpg"
+                alt="PC Infotech Component Diagnostic Workstation"
+                className="w-full h-[360px] sm:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+
+              {/* Top Floating Badge */}
+              <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-white bg-blue-700/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-xs">
+                  <Cpu className="w-3.5 h-3.5" />
+                  <span>SMD Micro-Soldering &amp; Logic Labs</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-300 bg-emerald-950/80 backdrop-blur-sm px-2.5 py-1 rounded-full border border-emerald-500/30">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Live Lab Operations
                 </span>
               </div>
 
-              {/* 4 Story Metric Tiles */}
-              <div className="grid grid-cols-2 gap-3.5">
-                <div className="p-4 rounded-xl bg-slate-50/80 border border-slate-200/70">
-                  <div className="flex items-center gap-2 text-blue-700 mb-1.5">
-                    <Building2 className="w-4 h-4" />
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Service Hubs</span>
-                  </div>
-                  <span className="text-2xl font-black text-slate-900 block">13 Direct</span>
-                  <span className="text-[11px] text-slate-500">Walk-in &amp; Onsite</span>
+              {/* Bottom Details Overlay */}
+              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10 text-white space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-blue-300">
+                    Proprietary Technical Infrastructure
+                  </span>
+                  <span className="text-[10px] text-slate-300 font-mono">10,000+ sq.ft ESD Labs</span>
                 </div>
-
-                <div className="p-4 rounded-xl bg-slate-50/80 border border-slate-200/70">
-                  <div className="flex items-center gap-2 text-blue-700 mb-1.5">
-                    <Users className="w-4 h-4" />
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Technical Team</span>
-                  </div>
-                  <span className="text-2xl font-black text-slate-900 block">100+ Staff</span>
-                  <span className="text-[11px] text-slate-500">Field &amp; Lab Engineers</span>
-                </div>
-
-                <div className="p-4 rounded-xl bg-slate-50/80 border border-slate-200/70">
-                  <div className="flex items-center gap-2 text-blue-700 mb-1.5">
-                    <Network className="w-4 h-4" />
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Spares Network</span>
-                  </div>
-                  <span className="text-2xl font-black text-slate-900 block">8 States</span>
-                  <span className="text-[11px] text-slate-500">1,000+ IT Dealers</span>
-                </div>
-
-                <div className="p-4 rounded-xl bg-red-50/50 border border-red-200/70">
-                  <div className="flex items-center gap-2 text-red-600 mb-1.5">
-                    <Trophy className="w-4 h-4" />
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Canon Award</span>
-                  </div>
-                  <span className="text-2xl font-black text-slate-900 block">2x Winner</span>
-                  <span className="text-[11px] text-slate-500">Best Partner (2015 &amp; 2018)</span>
+                <p className="text-xs text-slate-200 leading-snug">
+                  Component-level diagnostics on oscilloscopes, BGA rework stations, and printer formatter reconditioning.
+                </p>
+                <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[11px]">
+                  <Link
+                    href="/services"
+                    className="font-bold text-blue-300 hover:text-white flex items-center gap-1 transition-colors"
+                  >
+                    <span>View Engineering Scopes</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
+                  <Link
+                    href="/locations"
+                    className="font-semibold text-slate-300 hover:text-white flex items-center gap-1 transition-colors"
+                  >
+                    <MapPin className="w-3 h-3 text-blue-400" />
+                    <span>13 Physical Centers</span>
+                  </Link>
                 </div>
               </div>
-
-              {/* Direct Link to Interactive Map */}
-              <a
-                href="#locations"
-                className="flex items-center justify-between p-3.5 rounded-xl bg-blue-50/80 border border-blue-100 text-xs font-bold text-blue-800 hover:bg-blue-100 transition-colors group"
-              >
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-blue-700" />
-                  <span>View All 13 Locations &amp; Get Directions</span>
-                </div>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
             </div>
           </div>
         </div>

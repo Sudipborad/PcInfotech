@@ -32,17 +32,25 @@ export const HomeAchievements: React.FC = () => {
 
         {/* 3 Standout Milestone Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Card 1: Canon 2x Best Partner */}
-          <div className="p-7 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex flex-col justify-between hover:border-blue-300 transition-all">
+          {/* Card 1: Canon 2x Best Partner with Photo */}
+          <div className="p-7 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex flex-col justify-between hover:border-blue-300 transition-all overflow-hidden">
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <div className="p-3 rounded-xl bg-amber-50 border border-amber-200/80 text-amber-700">
-                  <Trophy className="w-6 h-6" />
-                </div>
-                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-100 text-amber-900">
-                  2x National Winner
+              <div className="relative h-44 -mx-7 -mt-7 mb-5 overflow-hidden bg-slate-900 group">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/canon-award-trophy.jpg"
+                  alt="Canon Best Partner National Award Trophy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                <span className="absolute bottom-3 left-3 text-[10px] font-bold text-white bg-amber-600/90 backdrop-blur-sm px-2.5 py-0.5 rounded-full shadow-xs">
+                  Canon National Convention (Goa)
+                </span>
+                <span className="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-black/60 text-amber-300 backdrop-blur-sm border border-amber-400/30">
+                  2x Winner
                 </span>
               </div>
+
               <div className="text-xs font-bold text-blue-700 font-mono mb-1">
                 2015 &amp; 2018
               </div>

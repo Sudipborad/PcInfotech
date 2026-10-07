@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { HomeProofStrip } from "@/components/HomeProofStrip";
 import { HomeWhatWeDo } from "@/components/HomeWhatWeDo";
 import { HomeJourney } from "@/components/HomeJourney";
 import { Growth } from "@/components/Growth";
@@ -26,7 +27,10 @@ export default function Home() {
       {/* 1. Hero: Who is the company & what does it do? */}
       <Hero />
 
-      {/* 2. What We Do: Concise capability overview linking to /services */}
+      {/* 2. Executive Proof Strip: 4 Key Operational Realities */}
+      <HomeProofStrip />
+
+      {/* 3. What We Do: Concise capability overview linking to /services */}
       <HomeWhatWeDo />
 
       {/* 3. Company Journey: Timeline milestones linking to /about */}

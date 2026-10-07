@@ -222,6 +222,101 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* OEM Honors & Canon National Award Showcase */}
+      <section className="py-20 bg-white border-b border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left: Authentic Award Photograph (5 cols) */}
+            <div className="lg:col-span-5">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-md group bg-slate-900">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/canon-award-trophy.jpg"
+                  alt="Canon Best Partner National Award Trophy"
+                  className="w-full h-[360px] sm:h-[420px] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10 text-white">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider">
+                      National Convention Honor
+                    </span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                      2015 &amp; 2018
+                    </span>
+                  </div>
+                  <h4 className="text-sm font-bold text-white">
+                    Canon Best Partner National Award (Goa)
+                  </h4>
+                  <p className="text-[11px] text-slate-300 mt-1">
+                    Awarded for highest SLA compliance, warranty turnaround speed, and customer satisfaction across Western India.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Technical Accreditations & SLA Audit (7 cols) */}
+            <div className="lg:col-span-7 space-y-6">
+              <div>
+                <span className="text-xs font-bold text-blue-700 uppercase tracking-wider block mb-2">
+                  Verified OEM Accreditations
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
+                  National Honors Backed by Sustained Technical Performance
+                </h2>
+                <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+                  Our recognition is not ceremonial—it is audited every month by multinational printer manufacturers tracking first-time fix rates, turnaround timelines, and genuine parts authenticity.
+                </p>
+              </div>
+
+              <div className="space-y-3.5 pt-2">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5">
+                  <div className="p-2 rounded-lg bg-amber-100 text-amber-800 shrink-0">
+                    <Trophy className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900">
+                      Canon India: 2x Best Partner Winner
+                    </h4>
+                    <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                      Conferred national top honors twice at the Canon India National Partner Convention in Goa, certifying SLA excellence across our 9 Canon ASC branches.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5">
+                  <div className="p-2 rounded-lg bg-blue-100 text-blue-800 shrink-0">
+                    <ShieldCheck className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900">
+                      HP Authorized Service Provider (Gujarat State)
+                    </h4>
+                    <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                      Official warranty provider for HP commercial laptops, LaserJet printers, and DesignJet plotters with regional hub at Devnandan Mall, Ellisbridge, Ahmedabad.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5">
+                  <div className="p-2 rounded-lg bg-emerald-100 text-emerald-800 shrink-0">
+                    <Award className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900">
+                      Authorized TVS-E Distributor &amp; EPSON Spares Stockist
+                    </h4>
+                    <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                      Bulk importer and authorized channel partner distributing authentic EPSON printheads, TVS-E dot matrix sub-assemblies, and consumables to 1,000+ dealers in 8 states.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Group Corporate Architecture & Headquarters */}
       <section className="py-20 bg-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
