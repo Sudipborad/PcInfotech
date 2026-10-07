@@ -77,52 +77,76 @@ export const Locations: React.FC = () => {
         </div>
 
         {/* Filter & Search Bar */}
-        <div className="bg-white border border-slate-200 rounded-xl p-4 mb-8 shadow-xs">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
-            {/* Search Input */}
-            <div className="md:col-span-5 relative">
+        <div className="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 mb-8 shadow-xs space-y-4">
+          {/* Top Row: Search Input + Results Count */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+            <div className="relative flex-1 max-w-xl">
               <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Search city, district, address, or center..."
+                placeholder="Search city, center name, or landmark (e.g. Ellisbridge, Athwa Gate)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-50 text-slate-800 placeholder-slate-400 border border-slate-200 text-xs focus:outline-none focus:border-blue-600 transition-colors"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 text-slate-900 placeholder-slate-400 border border-slate-200 text-xs focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
               />
             </div>
+            
+            <div className="text-xs font-semibold text-slate-500 self-start sm:self-auto flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <span>{filteredLocations.length} of 13 Centers Active</span>
+            </div>
+          </div>
 
+          {/* Bottom Row: State & Brand Filter Pills (Clean Wrapping, Zero Scrollbars) */}
+          <div className="pt-3 border-t border-slate-100 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             {/* State Filter */}
-            <div className="md:col-span-4 flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
-              {statesList.map((state) => (
-                <button
-                  key={state}
-                  onClick={() => setSelectedState(state)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
-                    selectedState === state
-                      ? "bg-blue-700 text-white shadow-xs"
-                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                  }`}
-                >
-                  {state}
-                </button>
-              ))}
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mr-1 shrink-0">
+                Region:
+              </span>
+              {statesList.map((state) => {
+                const count = state === "All States" ? 13 : state === "Gujarat" ? 9 : state === "Maharashtra" ? 3 : 1;
+                const isSelected = selectedState === state;
+                return (
+                  <button
+                    key={state}
+                    onClick={() => setSelectedState(state)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      isSelected
+                        ? "bg-blue-700 text-white shadow-xs"
+                        : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                    }`}
+                  >
+                    <span>{state}</span>
+                    <span className={`ml-1.5 text-[10px] opacity-80 ${isSelected ? "text-blue-100" : "text-slate-500"}`}>
+                      ({count})
+                    </span>
+                  </button>
+                );
+              })}
             </div>
 
             {/* Brand Filter */}
-            <div className="md:col-span-3 flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
-              {brandList.map((brand) => (
-                <button
-                  key={brand}
-                  onClick={() => setSelectedBrand(brand)}
-                  className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
-                    selectedBrand === brand
-                      ? "bg-slate-800 text-white shadow-xs"
-                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                  }`}
-                >
-                  {brand}
-                </button>
-              ))}
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mr-1 shrink-0">
+                Brand Focus:
+              </span>
+              {brandList.map((brand) => {
+                const isSelected = selectedBrand === brand;
+                return (
+                  <button
+                    key={brand}
+                    onClick={() => setSelectedBrand(brand)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      isSelected
+                        ? "bg-slate-900 text-white shadow-xs"
+                        : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                    }`}
+                  >
+                    {brand}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
