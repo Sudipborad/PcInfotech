@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { companyData } from "@/data/company";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="bg-white text-slate-600 border-t border-slate-200 text-xs">
+    <footer id="contact" className="bg-white text-slate-600 border-t border-slate-200/80 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand & Organization overview (2 cols) */}
@@ -28,7 +29,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-slate-600 text-xs leading-relaxed max-w-sm">
-              Authorized Service Provider for HP laptops and printers (Gujarat State), Canon Authorized Service Center (Best Partner 2015 & 2018), and authorized TVSE & EPSON spares stockist. Operating 13 direct centers with over 100 hardware and support engineers.
+              Authorized Service Provider for HP laptops and printers (Gujarat State), Canon Authorized Service Center (Best Partner 2015 &amp; 2018), and authorized TVSE &amp; EPSON spares stockist. Operating 13 direct centers with over 100 hardware and support engineers.
             </p>
 
             <div className="pt-2 space-y-1">
@@ -53,83 +54,63 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="#overview" className="hover:text-blue-700 transition-colors">
-                  Overview
-                </a>
+                <Link href="/" className="hover:text-blue-700 transition-colors">
+                  Home (Story)
+                </Link>
               </li>
               <li>
-                <a href="#about" className="hover:text-blue-700 transition-colors">
-                  Origin & Philosophy
-                </a>
+                <Link href="/about" className="hover:text-blue-700 transition-colors">
+                  About &amp; History
+                </Link>
               </li>
               <li>
-                <a href="#services" className="hover:text-blue-700 transition-colors">
-                  Services & Repair
-                </a>
+                <Link href="/services" className="hover:text-blue-700 transition-colors">
+                  Services &amp; Capabilities
+                </Link>
               </li>
               <li>
-                <a href="#growth" className="hover:text-blue-700 transition-colors">
-                  Growth Timeline
-                </a>
-              </li>
-              <li>
-                <a href="#achievements" className="hover:text-blue-700 transition-colors">
-                  Achievements & Awards
-                </a>
-              </li>
-              <li>
-                <a href="#locations" className="hover:text-blue-700 transition-colors">
-                  Service Center Map
-                </a>
-              </li>
-              <li>
-                <a href="#clients" className="hover:text-blue-700 transition-colors">
-                  Corporate Clients
-                </a>
+                <Link href="/locations" className="hover:text-blue-700 transition-colors">
+                  13 Service Hubs (Map)
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Primary Hubs */}
+          {/* Primary Regional Hubs */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
               Major Hubs
             </h4>
             <ul className="space-y-2">
               <li>
-                <a href="#locations" className="hover:text-blue-700 transition-colors">
+                <Link href="/locations" className="hover:text-blue-700 transition-colors">
                   Pune HQ (Somesh Appt)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#locations" className="hover:text-blue-700 transition-colors">
+                <Link href="/locations" className="hover:text-blue-700 transition-colors">
                   Ahmedabad HP ASC (Ellisbridge)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#locations" className="hover:text-blue-700 transition-colors">
+                <Link href="/locations" className="hover:text-blue-700 transition-colors">
                   Surat ASC Canon (Athwagate)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#locations" className="hover:text-blue-700 transition-colors">
+                <Link href="/locations" className="hover:text-blue-700 transition-colors">
                   Baroda Founding Base (Jetalpur)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#locations" className="hover:text-blue-700 transition-colors">
+                <Link href="/locations" className="hover:text-blue-700 transition-colors">
                   Nashik ASC Canon (Mumbai Naka)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#locations" className="hover:text-blue-700 transition-colors">
+                <Link href="/locations" className="hover:text-blue-700 transition-colors">
                   Indore ASC Canon (MIG Colony)
-                </a>
-              </li>
-              <li>
-                <a href="#locations" className="hover:text-blue-700 transition-colors">
-                  Aurangabad ASC (Cidco)
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -166,7 +147,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom copyright and legal integrity */}
-        <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
+        <div className="pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
           <div>
             © {new Date().getFullYear()} {companyData.name}. All verified operational data from certified organizational profile.
           </div>

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { MapPin, Phone, Mail, Wrench, ShieldCheck } from "lucide-react";
 
 export const CTA: React.FC = () => {
@@ -21,13 +22,13 @@ export const CTA: React.FC = () => {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="#locations"
+            <Link
+              href="/locations"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs text-slate-900 bg-white hover:bg-slate-100 shadow-sm transition-all hover:scale-[1.02]"
             >
               <MapPin className="w-4 h-4 text-blue-700" />
               <span>Locate Nearest Hub (13 Centers)</span>
-            </a>
+            </Link>
 
             <a
               href="tel:02024495041"

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { 
   Award, 
   MapPin, 
@@ -62,21 +63,21 @@ export const Hero: React.FC = () => {
 
             {/* Primary Action Buttons */}
             <div className="pt-2 flex flex-wrap items-center gap-3">
-              <a
-                href="#locations"
+              <Link
+                href="/locations"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-all hover:shadow-md"
               >
                 <MapPin className="w-4 h-4" />
                 <span>Locate 13 Service Hubs</span>
-              </a>
+              </Link>
 
-              <a
-                href="#services"
+              <Link
+                href="/services"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-xs text-slate-700 bg-white hover:bg-slate-50 border border-slate-300/80 shadow-2xs transition-all"
               >
                 <Cpu className="w-4 h-4 text-blue-700" />
                 <span>Explore Capabilities</span>
-              </a>
+              </Link>
 
               <a
                 href="tel:02024495041"
