@@ -93,7 +93,7 @@ export const Locations: React.FC = () => {
             
             <div className="text-xs font-semibold text-slate-500 self-start sm:self-auto flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span>{filteredLocations.length} of 13 Centers Active</span>
+              <span>{filteredLocations.length} of {serviceCentersData.length} Centers Active</span>
             </div>
           </div>
 
@@ -105,7 +105,9 @@ export const Locations: React.FC = () => {
                 Region:
               </span>
               {statesList.map((state) => {
-                const count = state === "All States" ? 13 : state === "Gujarat" ? 9 : state === "Maharashtra" ? 3 : 1;
+                const count = state === "All States"
+                  ? serviceCentersData.length
+                  : serviceCentersData.filter((s) => s.state === state).length;
                 const isSelected = selectedState === state;
                 return (
                   <button

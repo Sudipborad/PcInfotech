@@ -11,7 +11,9 @@ import {
   Building2, 
   Network, 
   Trophy,
-  ArrowRight
+  ArrowRight,
+  ShoppingBag,
+  ExternalLink
 } from "lucide-react";
 
 export const Hero: React.FC = () => {
@@ -28,17 +30,17 @@ export const Hero: React.FC = () => {
             {/* Accreditation Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-800 text-xs font-semibold tracking-wide">
               <Award className="w-3.5 h-3.5 text-blue-700" />
-              <span>Est. 1995 • HP Authorized • Canon 2x Best Partner • TVSE & EPSON Spares</span>
+              <span>Two Trusted Brands. One Reliable Support. • HP &amp; Canon Authorised</span>
             </div>
 
             {/* Clear, Bold Headline (Answers 'What does company do?') */}
             <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-slate-900 leading-[1.15]">
-              Authorized IT Hardware &amp; Printer Engineering Across Western India.
+              Authorised IT Hardware, Printer Sales &amp; Spares Across 4 States.
             </h1>
 
             {/* Concise Supporting Statement (1 sentence, no filler) */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
-              Direct authorized service partner for <strong className="text-slate-900 font-semibold">HP, Canon, TVSE, and EPSON</strong> with <strong className="text-blue-700 font-semibold">13 verified hubs</strong>, 100+ hardware specialists, and proprietary chip-level logic card repair labs since 1995.
+              Direct authorised service partner for <strong className="text-slate-900 font-semibold">HP &amp; Canon</strong> serving <strong className="text-blue-700 font-semibold">Gujarat, Rajasthan, Maharashtra &amp; Madhya Pradesh</strong> across 25 branch cities, with chip-level labs and our official Vivek Infotech online parts store.
             </p>
 
             {/* Visual Credibility Pillars (Short + Scannable) */}
@@ -48,16 +50,16 @@ export const Hero: React.FC = () => {
                 <span className="text-xs text-slate-500 font-medium">Years in Business</span>
               </div>
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
-                <span className="text-2xl font-black text-slate-900 block">13</span>
-                <span className="text-xs text-slate-500 font-medium">Direct Service Hubs</span>
+                <span className="text-2xl font-black text-blue-700 block">4 States</span>
+                <span className="text-xs text-slate-500 font-medium">GJ, RJ, MH &amp; MP</span>
+              </div>
+              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
+                <span className="text-2xl font-black text-slate-900 block">25</span>
+                <span className="text-xs text-slate-500 font-medium">Branch Cities</span>
               </div>
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
                 <span className="text-2xl font-black text-slate-900 block">100+</span>
                 <span className="text-xs text-slate-500 font-medium">Hardware Engineers</span>
-              </div>
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
-                <span className="text-2xl font-black text-slate-900 block">1,000+</span>
-                <span className="text-xs text-slate-500 font-medium">Dealers in 8 States</span>
               </div>
             </div>
 
@@ -68,24 +70,27 @@ export const Hero: React.FC = () => {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-all hover:shadow-md"
               >
                 <MapPin className="w-4 h-4" />
-                <span>Locate 13 Service Hubs</span>
-              </Link>
-
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-xs text-slate-700 bg-white hover:bg-slate-50 border border-slate-300/80 shadow-2xs transition-all"
-              >
-                <Cpu className="w-4 h-4 text-blue-700" />
-                <span>Explore Capabilities</span>
+                <span>Locate 25 Service Branches</span>
               </Link>
 
               <a
-                href="tel:02024495041"
-                className="inline-flex items-center gap-2 text-xs text-slate-600 hover:text-blue-700 px-3 py-2 font-semibold transition-colors"
+                href="https://vivekinfotech.catalog.to/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-xs text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-2xs transition-all"
               >
-                <Phone className="w-4 h-4 text-blue-700" />
-                <span>HQ Pune: 020 24495041</span>
+                <ShoppingBag className="w-4 h-4 text-emerald-700" />
+                <span>Online Parts Store</span>
+                <ExternalLink className="w-3 h-3 opacity-70" />
               </a>
+
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl font-bold text-xs text-slate-700 bg-white hover:bg-slate-50 border border-slate-300/80 shadow-2xs transition-all"
+              >
+                <Cpu className="w-4 h-4 text-blue-700" />
+                <span>Capabilities</span>
+              </Link>
             </div>
           </div>
 

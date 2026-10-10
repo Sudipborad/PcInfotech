@@ -9,9 +9,9 @@ import Link from "next/link";
 import { companyData } from "@/data/company";
 
 export const metadata: Metadata = {
-  title: "Service Center Locations | PC Infotech Solutions — 13 Direct Hubs Across GJ, MH & MP",
+  title: "Service Center Locations | PC Infotech Solutions — 4 States (GJ, MH, MP & RJ)",
   description:
-    "Interactive map and directory of all 13 certified service centers in Gujarat, Maharashtra, and MP. Get turn-by-turn directions, direct phone numbers, and walk-in support addresses.",
+    "Interactive map and directory of certified HP & Canon service centers across Gujarat, Maharashtra, Madhya Pradesh, and Rajasthan. Get turn-by-turn directions, direct phone numbers, and walk-in support addresses.",
 };
 
 export default function LocationsPage() {
@@ -25,13 +25,13 @@ export default function LocationsPage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold mb-4">
               <MapPin className="w-3.5 h-3.5 text-blue-700" />
-              <span>Interactive Geographic Directory</span>
+              <span>Interactive Geographic Directory • 4 States</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-              13 Certified Service Hubs Across Western India.
+              One Trust. Two Brands. Four States.
             </h1>
             <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-              Direct walk-in centers and corporate dispatch bases in Gujarat, Maharashtra, and Madhya Pradesh. Click any center on the map or list below for instant turn-by-turn Google Maps navigation.
+              Direct service hubs and authorized service branches across <strong className="text-slate-900 font-semibold">Gujarat, Maharashtra, Madhya Pradesh, and Rajasthan</strong>. Click any center on the map or list below for instant turn-by-turn Google Maps navigation.
             </p>
           </div>
         </div>

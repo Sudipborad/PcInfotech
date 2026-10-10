@@ -1,6 +1,5 @@
-"use client";
 import React from "react";
-import { ShieldCheck, Cpu, Building2, Trophy, Clock, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Cpu, Building2, Trophy, Clock, ShoppingBag, ExternalLink } from "lucide-react";
 
 export const HomeProofStrip: React.FC = () => {
   return (
@@ -15,7 +14,7 @@ export const HomeProofStrip: React.FC = () => {
             <div>
               <span className="text-xs font-bold text-slate-200 block">30-Year Heritage</span>
               <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
-                Founded 1995 by technocrat Chetan Kumbhani. Unbroken 3-decade engineering track record.
+                Founded 1995 by Mr. Chetan Kumbhani. Unbroken 3-decade technical engineering pedigree.
               </p>
             </div>
           </div>
@@ -26,9 +25,9 @@ export const HomeProofStrip: React.FC = () => {
               <Building2 className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-xs font-bold text-slate-200 block">13 Physical Hubs</span>
+              <span className="text-xs font-bold text-slate-200 block">4 States • 25 Branches</span>
               <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
-                Direct walk-in centers across Gujarat, Maharashtra &amp; MP with 10,000+ sq.ft lab space.
+                Service hubs across Gujarat, Maharashtra, Rajasthan &amp; MP with Pune HQ and Pimpri Canon ASC.
               </p>
             </div>
           </div>
@@ -39,22 +38,30 @@ export const HomeProofStrip: React.FC = () => {
               <Trophy className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-xs font-bold text-slate-200 block">Direct OEM Credentials</span>
+              <span className="text-xs font-bold text-slate-200 block">HP &amp; Canon Authorised</span>
               <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
-                HP Authorized, 2x Canon Best Partner Winner, TVS-E &amp; EPSON authorized stockist.
+                Two trusted brands. One reliable support. 2x Canon Best Partner Winner (2015, 2018).
               </p>
             </div>
           </div>
 
           {/* Fact 4 */}
           <div className="flex items-start gap-3.5">
-            <div className="p-2.5 rounded-xl bg-indigo-500/20 border border-indigo-500/30 text-indigo-400 shrink-0">
-              <Cpu className="w-5 h-5" />
+            <div className="p-2.5 rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 shrink-0">
+              <ShoppingBag className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-xs font-bold text-slate-200 block">Chip-Level Logic Labs</span>
+              <a
+                href="https://vivekinfotech.catalog.to/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-bold text-slate-200 hover:text-emerald-300 flex items-center gap-1 transition-colors"
+              >
+                <span>Live Spares Store</span>
+                <ExternalLink className="w-3 h-3 text-emerald-400" />
+              </a>
               <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
-                Proprietary SMD micro-soldering labs restoring boards instead of costly whole-unit swaps.
+                Official Vivek Infotech catalog for printer parts, genuine print heads &amp; printer sales.
               </p>
             </div>
           </div>

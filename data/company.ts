@@ -1,7 +1,10 @@
 export interface CompanyInfo {
   name: string;
   tagline: string;
+  brandPromise: string;
+  fourStatesTagline: string;
   foundingYear: number;
+  onlineStoreUrl: string;
   founder: {
     name: string;
     qualification: string;
@@ -20,6 +23,19 @@ export interface CompanyInfo {
     mobile: string[];
     email: string[];
   };
+  localBranches: {
+    name: string;
+    role: string;
+    location: string;
+  }[];
+  operatingStates: string[];
+  networkBranchesByState: {
+    stateCode: string;
+    stateName: string;
+    brandFocus: string;
+    cities: string[];
+  }[];
+  alsoAvailable: string[];
   workforceCount: string;
   dealerNetwork: string;
   sparesSupplyStates: string[];
@@ -39,7 +55,10 @@ export interface CompanyInfo {
 export const companyData: CompanyInfo = {
   name: "PC Infotech Solutions",
   tagline: "Premier IT Hardware, Printer & Peripherals Enterprise Service Provider Since 1995",
+  brandPromise: "Two Trusted Brands. One Reliable Support.",
+  fourStatesTagline: "One Trust. Two Brands. Four States. We've Got You Covered.",
   foundingYear: 1995,
+  onlineStoreUrl: "https://vivekinfotech.catalog.to/",
   founder: {
     name: "Mr. Chetan Kumbhani",
     qualification: "B.E. (Electronics & Telecommunications), Pune University (1994)",
@@ -50,7 +69,7 @@ export const companyData: CompanyInfo = {
   corePhilosophy: "Acquire knowledge first to justify your role of IT solution provider.",
   groupCompanies: [
     "PC Infotech Solutions",
-    "Vivek Infotech",
+    "Vivek Infotech (Online Store: vivekinfotech.catalog.to)",
     "Swami Vivekanand Infocare"
   ],
   headquarters: {
@@ -59,15 +78,97 @@ export const companyData: CompanyInfo = {
     state: "Maharashtra",
     pincode: "411030",
     phone: "020 24495041",
-    mobile: ["+91 9822204910", "+91 9822056030"],
-    email: ["svipl.pune@gmail.com", "chetan.kumbhani@ivek.com"]
+    mobile: ["+91 9822204910", "+91 9822056030", "+91 9160003112"],
+    email: ["svipl.pune@gmail.com", "chetan.kumbhani@ivek.com", "Vivekinfotech@ivekv.com"]
   },
+  localBranches: [
+    {
+      name: "Pune Head Office & Technical Center",
+      role: "Central Operations & High-End Lab",
+      location: "425 Narayan Peth, Nr. Patrya Maruti Chowk, Pune"
+    },
+    {
+      name: "Pimpri (Pune) Canon Authorised Service Centre",
+      role: "Local Pune Canon ASC Branch",
+      location: "Pimpri, Pune, Maharashtra"
+    }
+  ],
+  operatingStates: [
+    "Gujarat",
+    "Rajasthan",
+    "Maharashtra",
+    "Madhya Pradesh"
+  ],
+  networkBranchesByState: [
+    {
+      stateCode: "GJ",
+      stateName: "Gujarat",
+      brandFocus: "HP & Canon Authorised Service Centre",
+      cities: [
+        "Vapi",
+        "Surat",
+        "Ankleshwar",
+        "Baroda (Vadodara)",
+        "Godhara",
+        "Ahmedabad",
+        "Gandhinagar",
+        "Rajkot",
+        "Morbi",
+        "Junagadh",
+        "Adipur",
+        "Jamnagar"
+      ]
+    },
+    {
+      stateCode: "MH",
+      stateName: "Maharashtra",
+      brandFocus: "HP & Canon Authorised Service Centre",
+      cities: [
+        "Pune (Narayan Peth HQ)",
+        "Pimpri (Pune Canon ASC)",
+        "Nashik",
+        "Chh. Sambhajinagar",
+        "Jalgaon",
+        "Ahilyanagar"
+      ]
+    },
+    {
+      stateCode: "MP",
+      stateName: "Madhya Pradesh",
+      brandFocus: "HP & Canon Authorised Service Centre",
+      cities: [
+        "Indore",
+        "Bhopal",
+        "Gwalior",
+        "Jabalpur"
+      ]
+    },
+    {
+      stateCode: "RJ",
+      stateName: "Rajasthan",
+      brandFocus: "HP Authorised Service Network",
+      cities: [
+        "Jaipur",
+        "Udaipur",
+        "Alwar"
+      ]
+    }
+  ],
+  alsoAvailable: [
+    "Printer Sales — All Leading Brands (HP, Canon, EPSON, TVS-E)",
+    "Bulk Printer Spare Parts Selling with Fast Courier Dispatch",
+    "Genuine OEM & Certified Compatible Replacement Parts",
+    "Parts Supply for All Brands (Paper Pickups, Fusers, Motors, Formatter Cards)",
+    "Dedicated Support for IT Dealers, Corporates & Service Centers",
+    "Official Online Store with Direct Ordering: vivekinfotech.catalog.to"
+  ],
   workforceCount: "100+ Hardware & Support Engineers",
   dealerNetwork: "1,000+ IT Dealers Across India",
   sparesSupplyStates: [
     "Gujarat",
     "Maharashtra",
     "Madhya Pradesh",
+    "Rajasthan",
     "Karnataka",
     "Andhra Pradesh",
     "West Bengal",
@@ -86,18 +187,18 @@ export const companyData: CompanyInfo = {
     {
       brand: "HP",
       role: "Authorized Service Provider for HP Printers & Laptops",
-      territory: "Gujarat State (Ellisbridge Ahmedabad Regional ASC & state network)"
+      territory: "Serving in Gujarat, Rajasthan, Maharashtra & Madhya Pradesh"
     },
     {
       brand: "Canon",
-      role: "Authorized Service Center (ASC)",
+      role: "Authorized Service Center (ASC) — 2x Best Partner Winner",
       recognition: "Awarded Best Partner in 2015 & 2018",
-      territory: "Multi-branch network across Surat, Junagadh, Godhra, Nashik, Aurangabad, Jalgaon, Nanded, Navi Mumbai, Indore"
+      territory: "Serving in Gujarat & Maharashtra (Surat, Pimpri Pune, Junagadh, Godhara, Nashik, Chh. Sambhajinagar, Jalgaon, Indore)"
     },
     {
       brand: "Epson",
       role: "Authorized Spare Stockist & Technical Service Provider",
-      territory: "Surat & Nashik Region (Print heads & genuine components)"
+      territory: "Western Region (Print heads & genuine components)"
     },
     {
       brand: "TVS Electronics",

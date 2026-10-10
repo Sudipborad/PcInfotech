@@ -4,7 +4,7 @@ export interface ServiceCenter {
   brandFocus: string[];
   unitEntity: string;
   city: string;
-  state: "Gujarat" | "Maharashtra" | "Madhya Pradesh";
+  state: "Gujarat" | "Maharashtra" | "Madhya Pradesh" | "Rajasthan";
   address: string;
   pincode?: string;
   phones: string[];
@@ -279,8 +279,46 @@ export const serviceCentersData: ServiceCenter[] = [
     coordinates: [22.7386, 75.8856],
     mapsQuery: "B-97, MIG Colony, AB Road, Indore, Madhya Pradesh 452001",
     specialization: "Madhya Pradesh hub office: ASC Canon, commercial plotter service, and regional warranty repair."
+  },
+  {
+    id: "pimpri-canon",
+    name: "Pimpri (Pune) Canon Authorised Service Centre",
+    brandFocus: ["Canon", "HP"],
+    unitEntity: "PC Infotech Solutions / Vivek Infotech",
+    city: "Pimpri (Pune)",
+    state: "Maharashtra",
+    address: "Pimpri Industrial & Commercial Complex, Old Mumbai-Pune Highway",
+    pincode: "411018",
+    phones: ["020 24495041", "+91 9822204910", "+91 9160003112"],
+    establishedYear: 2021,
+    areaSqFt: 650,
+    tenure: "Rented",
+    staffCount: 5,
+    coveredAreas: ["Pimpri", "Chinchwad", "Bhosari", "Akurdi", "Nigdi", "Talawade IT Park", "Chakan"],
+    coordinates: [18.6298, 73.7997],
+    mapsQuery: "Pimpri Chinchwad, Pune, Maharashtra 411018",
+    specialization: "Dedicated Canon Authorised Service Centre serving Pimpri-Chinchwad municipal corporation & MIDC industrial cluster."
+  },
+  {
+    id: "jaipur-hub",
+    name: "Jaipur Regional Service Hub (Rajasthan)",
+    brandFocus: ["HP", "Multi-brand"],
+    unitEntity: "PC Infotech Network",
+    city: "Jaipur",
+    state: "Rajasthan",
+    address: "MI Road Commercial Plaza, Nr. Panch Batti",
+    pincode: "302001",
+    phones: ["+91 9822204910", "+91 9824751569"],
+    establishedYear: 2021,
+    areaSqFt: 550,
+    tenure: "Rented",
+    staffCount: 4,
+    coveredAreas: ["Jaipur", "Udaipur", "Alwar", "Ajmer", "Kota", "Bikaner"],
+    coordinates: [26.9124, 75.7873],
+    mapsQuery: "MI Road, Jaipur, Rajasthan 302001",
+    specialization: "Rajasthan regional service hub covering Jaipur, Udaipur, and Alwar with HP printer and laptop diagnostics."
   }
 ];
 
-export const statesList = ["All States", "Gujarat", "Maharashtra", "Madhya Pradesh"] as const;
+export const statesList = ["All States", "Gujarat", "Maharashtra", "Madhya Pradesh", "Rajasthan"] as const;
 export const brandList = ["All Brands", "Canon", "HP", "EPSON", "TVSE"] as const;

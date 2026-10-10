@@ -9,22 +9,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "PC Infotech Solutions | Authorized Service Provider (HP, Canon, TVSE)",
+  title: "PC Infotech Solutions | HP & Canon Authorised Service • 4 States • Spares Store",
   description:
-    "Founded in 1995 by technocrat Chetan Kumbhani. Authorized HP and Canon service center operating 13 hubs across Gujarat, Maharashtra, and MP with over 100+ hardware engineers and spares distribution across 8 states.",
+    "Two trusted brands. One reliable support. Founded in 1995 by Mr. Chetan Kumbhani. Authorized HP & Canon service network across Gujarat, Rajasthan, Maharashtra & Madhya Pradesh with 25 branches and Vivek Infotech online parts store.",
   keywords: [
     "PC Infotech Solutions",
-    "HP Authorized Service Provider Gujarat",
-    "Canon Authorized Service Center",
+    "HP Authorized Service Centre",
+    "Canon Authorized Service Centre",
     "Pune Narayan Peth printer repair",
-    "Ahmedabad Ashram Road HP service center",
-    "Surat Jolly Plaza Canon service center",
+    "Pimpri Canon Authorised Service Centre",
+    "Ahmedabad HP service center",
+    "Surat Canon service center",
+    "Jaipur HP service hub",
+    "Indore Canon service center",
+    "Vivek Infotech online store",
+    "vivekinfotech.catalog.to",
+    "Printer spare parts online",
+    "Print head EPSON Canon HP",
     "Logic card chip level repair",
-    "Chetan Kumbhani",
-    "Vivek Infotech",
-    "Swami Vivekanand Infocare",
-    "TVSE spares distributor",
-    "Epson print head stockist"
+    "Chetan Kumbhani"
   ],
   authors: [{ name: "PC Infotech Solutions" }],
   icons: {
@@ -33,9 +36,9 @@ export const metadata: Metadata = {
     apple: "/LOGOS/pcis-icon.svg",
   },
   openGraph: {
-    title: "PC Infotech Solutions — Authorized Enterprise IT & Printer Services",
+    title: "PC Infotech Solutions — One Trust. Two Brands. Four States.",
     description:
-      "Direct network of 13 certified service centers in Western India, 100+ hardware and support engineers, handling mission-critical printer hardware since 1995.",
+      "Direct network of 25 certified branches in Gujarat, Rajasthan, Maharashtra & MP, 100+ hardware specialists, chip-level labs, and official online spare parts store.",
     type: "website",
     locale: "en_IN",
   },

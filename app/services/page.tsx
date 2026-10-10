@@ -17,7 +17,8 @@ import {
   Printer,
   Laptop,
   Truck,
-  RotateCw
+  RotateCw,
+  ShoppingBag
 } from "lucide-react";
 import Link from "next/link";
 
@@ -264,6 +265,137 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Dedicated Online Store & Parts Catalog Showcase */}
+      <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-950 text-white border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold mb-3">
+                <ShoppingBag className="w-3.5 h-3.5" />
+                <span>Official Online Store • Vivek Infotech</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
+                Printer Sales &amp; Bulk Spare Parts Catalog
+              </h2>
+              <p className="mt-2 text-slate-300 text-sm sm:text-base max-w-2xl">
+                Browse our live digital catalog at <strong className="text-emerald-400">vivekinfotech.catalog.to</strong> for immediate pricing, ready inventory, and fast nationwide courier dispatch.
+              </p>
+            </div>
+
+            <a
+              href="https://vivekinfotech.catalog.to/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg shadow-emerald-950/40 transition-all self-start md:self-auto group"
+            >
+              <ShoppingBag className="w-4 h-4" />
+              <span>Launch Online Store (vivekinfotech.catalog.to)</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {/* Catalog Item 1 */}
+            <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+              <div>
+                <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider block mb-2 font-mono">
+                  50+ Items In Stock
+                </span>
+                <h3 className="text-base font-bold text-white mb-2">
+                  Printer Spare Parts
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  Paper pickup roller assemblies, fuser sleeves, pressure rollers, gears, carriage motors, logic cards, and SMPS power units.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-slate-700/60 text-[11px] text-slate-400">
+                HP, Canon, EPSON &amp; TVS-E
+              </div>
+            </div>
+
+            {/* Catalog Item 2 */}
+            <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+              <div>
+                <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider block mb-2 font-mono">
+                  Genuine &amp; OEM
+                </span>
+                <h3 className="text-base font-bold text-white mb-2">
+                  Ink &amp; Print Heads
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  Ready stock of authentic print heads for EPSON EcoTank series, Canon Pixma &amp; MAXIFY, and HP Smart Tank systems.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-slate-700/60 text-[11px] text-slate-400">
+                Direct OEM Sourced &amp; Tested
+              </div>
+            </div>
+
+            {/* Catalog Item 3 */}
+            <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+              <div>
+                <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider block mb-2 font-mono">
+                  Maintenance Kits
+                </span>
+                <h3 className="text-base font-bold text-white mb-2">
+                  Waste Ink Pads &amp; Absorbers
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  Complete ink absorber box sets, maintenance cartridge sponges, and reset solutions to resolve printer error states.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-slate-700/60 text-[11px] text-slate-400">
+                Ready Dispatch Across India
+              </div>
+            </div>
+
+            {/* Catalog Item 4 */}
+            <div className="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+              <div>
+                <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider block mb-2 font-mono">
+                  All Leading Brands
+                </span>
+                <h3 className="text-base font-bold text-white mb-2">
+                  New Printer Sales
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  Competitive dealer and enterprise pricing on laser printers, tank inkjets, multi-function copiers, and dot-matrix printers.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-slate-700/60 text-[11px] text-slate-400">
+                Full Manufacturer Warranty
+              </div>
+            </div>
+          </div>
+
+          {/* Capabilities Banner */}
+          <div className="p-6 rounded-2xl bg-slate-800/50 border border-slate-700/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-300">
+              <span className="flex items-center gap-1.5 font-medium">
+                <Check className="w-4 h-4 text-emerald-400" />
+                Bulk Printer Spare Parts Selling
+              </span>
+              <span className="flex items-center gap-1.5 font-medium">
+                <Check className="w-4 h-4 text-emerald-400" />
+                Genuine &amp; Certified Compatible Parts
+              </span>
+              <span className="flex items-center gap-1.5 font-medium">
+                <Check className="w-4 h-4 text-emerald-400" />
+                Dedicated Support for Dealers &amp; Businesses
+              </span>
+            </div>
+            <a
+              href="https://vivekinfotech.catalog.to/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-bold text-emerald-400 hover:text-emerald-300 shrink-0 flex items-center gap-1"
+            >
+              <span>Explore 70+ Products &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* 4-Step Technical Quality & Repair Workflow */}
       <section className="py-20 bg-slate-50 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -337,7 +469,7 @@ export default function ServicesPage() {
               Have a Printer Issue or Require Genuine Parts?
             </h2>
             <p className="mt-2 text-slate-600 text-xs sm:text-sm max-w-xl leading-relaxed">
-              Locate any of our 13 certified service centers across Gujarat, Maharashtra, and MP, or call our Pune central coordination desk.
+              Locate any of our 25 branches across Gujarat, Maharashtra, Rajasthan &amp; MP, order directly from our online parts store, or call our Pune central coordination desk.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link
@@ -345,11 +477,20 @@ export default function ServicesPage() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold shadow-xs transition-colors"
               >
                 <MapPin className="w-4 h-4" />
-                <span>Locate 13 Service Hubs (Map)</span>
+                <span>Locate 25 Service Branches (Map)</span>
               </Link>
               <a
+                href="https://vivekinfotech.catalog.to/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors shadow-xs"
+              >
+                <ShoppingBag className="w-4 h-4" />
+                <span>Shop Parts Online</span>
+              </a>
+              <a
                 href="tel:02024495041"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 text-xs font-bold transition-colors shadow-2xs"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 text-xs font-bold transition-colors shadow-2xs"
               >
                 <span>Call Pune HQ: 020 24495041</span>
               </a>

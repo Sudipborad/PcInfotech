@@ -29,20 +29,33 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-slate-600 text-xs leading-relaxed max-w-sm">
-              Authorized Service Provider for HP laptops and printers (Gujarat State), Canon Authorized Service Center (Best Partner 2015 &amp; 2018), and authorized TVSE &amp; EPSON spares stockist. Operating 13 direct centers with over 100 hardware and support engineers.
+              Authorised Service Provider for HP (Gujarat, Rajasthan, Maharashtra &amp; Madhya Pradesh) and Canon (Gujarat &amp; Maharashtra). Operating 25 branches with 100+ hardware specialists, chip-level labs, and our online spares store.
             </p>
 
             <div className="pt-2 space-y-1">
               <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block">
-                Group Companies:
+                Group Companies &amp; E-Commerce:
               </span>
-              <ul className="text-slate-600 space-y-0.5">
-                {companyData.groupCompanies.map((c) => (
-                  <li key={c} className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-700" />
-                    <span>{c}</span>
-                  </li>
-                ))}
+              <ul className="text-slate-600 space-y-1">
+                <li className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-700 shrink-0" />
+                  <span>PC Infotech Solutions (Service Network)</span>
+                </li>
+                <li className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
+                  <a
+                    href="https://vivekinfotech.catalog.to/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-emerald-700 hover:text-emerald-800 underline underline-offset-2"
+                  >
+                    Vivek Infotech (Online Store ↗)
+                  </a>
+                </li>
+                <li className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0" />
+                  <span>Swami Vivekanand Infocare</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -60,7 +73,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="/about" className="hover:text-blue-700 transition-colors">
-                  About &amp; History
+                  About &amp; Journey
                 </Link>
               </li>
               <li>
@@ -70,8 +83,18 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="/locations" className="hover:text-blue-700 transition-colors">
-                  13 Service Hubs (Map)
+                  25 Branches (Map)
                 </Link>
+              </li>
+              <li>
+                <a
+                  href="https://vivekinfotech.catalog.to/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1"
+                >
+                  <span>Online Store ↗</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -79,12 +102,22 @@ export const Footer: React.FC = () => {
           {/* Primary Regional Hubs */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-              Major Hubs
+              Key Hubs (4 States)
             </h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/locations" className="hover:text-blue-700 transition-colors">
-                  Pune HQ (Somesh Appt)
+                  Pune HQ (Narayan Peth)
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations" className="hover:text-blue-700 transition-colors">
+                  Pimpri Pune (Canon ASC)
+                </Link>
+              </li>
+              <li>
+                <Link href="/locations" className="hover:text-blue-700 transition-colors">
+                  Jaipur (Rajasthan Hub)
                 </Link>
               </li>
               <li>
@@ -95,16 +128,6 @@ export const Footer: React.FC = () => {
               <li>
                 <Link href="/locations" className="hover:text-blue-700 transition-colors">
                   Surat ASC Canon (Athwagate)
-                </Link>
-              </li>
-              <li>
-                <Link href="/locations" className="hover:text-blue-700 transition-colors">
-                  Baroda Founding Base (Jetalpur)
-                </Link>
-              </li>
-              <li>
-                <Link href="/locations" className="hover:text-blue-700 transition-colors">
-                  Nashik ASC Canon (Mumbai Naka)
                 </Link>
               </li>
               <li>
