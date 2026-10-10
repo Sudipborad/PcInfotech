@@ -25,9 +25,9 @@ export const HomeProofStrip: React.FC = () => {
               <Building2 className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-xs font-bold text-slate-200 block">4 States • 25 Branches</span>
+              <span className="text-xs font-bold text-slate-200 block">13 Verified Direct Hubs</span>
               <p className="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
-                Service hubs across Gujarat, Maharashtra, Rajasthan &amp; MP with Pune HQ and Pimpri Canon ASC.
+                Direct walk-in centers across Gujarat, Maharashtra &amp; Central India with 10,000+ sq.ft lab space.
               </p>
             </div>
           </div>

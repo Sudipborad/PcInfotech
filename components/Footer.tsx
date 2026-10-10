@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-slate-600 text-xs leading-relaxed max-w-sm">
-              Authorised Service Provider for HP (Gujarat, Rajasthan, Maharashtra &amp; Madhya Pradesh) and Canon (Gujarat &amp; Maharashtra). Operating 25 branches with 100+ hardware specialists, chip-level labs, and our online spares store.
+              Authorised Service Provider for HP (Gujarat, Rajasthan, Maharashtra &amp; Madhya Pradesh) and Canon (Gujarat &amp; Maharashtra). Operating 13 direct service hubs with over 100 hardware and support engineers, chip-level labs, and our online spares store.
             </p>
 
             <div className="pt-2 space-y-1">
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="/locations" className="hover:text-blue-700 transition-colors">
-                  25 Branches (Map)
+                  13 Service Hubs (Map)
                 </Link>
               </li>
               <li>

@@ -28,10 +28,10 @@ export default function LocationsPage() {
               <span>Interactive Geographic Directory • 4 States</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-              One Trust. Two Brands. Four States.
+              13 Certified Service Hubs Across Western India.
             </h1>
             <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-              Direct service hubs and authorized service branches across <strong className="text-slate-900 font-semibold">Gujarat, Maharashtra, Madhya Pradesh, and Rajasthan</strong>. Click any center on the map or list below for instant turn-by-turn Google Maps navigation.
+              Direct walk-in centers and corporate dispatch hubs in Gujarat, Maharashtra, and Madhya Pradesh with service network across 4 states. Click any center on the map or list below for instant turn-by-turn Google Maps navigation.
             </p>
           </div>
         </div>

@@ -469,7 +469,7 @@ export default function ServicesPage() {
               Have a Printer Issue or Require Genuine Parts?
             </h2>
             <p className="mt-2 text-slate-600 text-xs sm:text-sm max-w-xl leading-relaxed">
-              Locate any of our 25 branches across Gujarat, Maharashtra, Rajasthan &amp; MP, order directly from our online parts store, or call our Pune central coordination desk.
+              Locate any of our 13 certified service hubs across Gujarat, Maharashtra, and Madhya Pradesh, order directly from our online parts store, or call our Pune central coordination desk.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link
@@ -477,7 +477,7 @@ export default function ServicesPage() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold shadow-xs transition-colors"
               >
                 <MapPin className="w-4 h-4" />
-                <span>Locate 25 Service Branches (Map)</span>
+                <span>Locate 13 Service Hubs (Map)</span>
               </Link>
               <a
                 href="https://vivekinfotech.catalog.to/"

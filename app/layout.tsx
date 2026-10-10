@@ -9,18 +9,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "PC Infotech Solutions | HP & Canon Authorised Service • 4 States • Spares Store",
+  title: "PC Infotech Solutions | HP & Canon Authorised Service • 13 Hubs • Spares Store",
   description:
-    "Two trusted brands. One reliable support. Founded in 1995 by Mr. Chetan Kumbhani. Authorized HP & Canon service network across Gujarat, Rajasthan, Maharashtra & Madhya Pradesh with 25 branches and Vivek Infotech online parts store.",
+    "Two trusted brands. One reliable support. Founded in 1995 by Mr. Chetan Kumbhani. Authorized HP & Canon service network across Gujarat, Rajasthan, Maharashtra & Madhya Pradesh with 13 direct service hubs and Vivek Infotech online parts store.",
   keywords: [
     "PC Infotech Solutions",
     "HP Authorized Service Centre",
     "Canon Authorized Service Centre",
     "Pune Narayan Peth printer repair",
-    "Pimpri Canon Authorised Service Centre",
     "Ahmedabad HP service center",
     "Surat Canon service center",
-    "Jaipur HP service hub",
     "Indore Canon service center",
     "Vivek Infotech online store",
     "vivekinfotech.catalog.to",
@@ -38,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PC Infotech Solutions — One Trust. Two Brands. Four States.",
     description:
-      "Direct network of 25 certified branches in Gujarat, Rajasthan, Maharashtra & MP, 100+ hardware specialists, chip-level labs, and official online spare parts store.",
+      "Direct network of 13 certified service hubs in Western India, 100+ hardware specialists, chip-level labs, and official online spare parts store.",
     type: "website",
     locale: "en_IN",
   },

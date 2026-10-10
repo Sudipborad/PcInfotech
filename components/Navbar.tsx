@@ -100,7 +100,7 @@ export const Navbar: React.FC = () => {
               className="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl text-white bg-blue-700 hover:bg-blue-800 shadow-xs transition-colors"
             >
               <MapPin className="w-3.5 h-3.5" />
-              <span>Branches</span>
+              <span>13 Hubs</span>
             </Link>
           </div>
 
@@ -179,7 +179,7 @@ export const Navbar: React.FC = () => {
                 className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-blue-700 text-white text-xs font-bold shadow-xs"
               >
                 <MapPin className="w-4 h-4" />
-                <span>Find Nearest Branch &amp; Service Hub</span>
+                <span>Find Nearest Service Hub (13 Centers)</span>
               </Link>
             </div>
           </div>

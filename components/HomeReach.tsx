@@ -17,7 +17,7 @@ export const HomeReach: React.FC = () => {
               One Trust. Two Brands. Four States.
             </h2>
             <p className="mt-2 text-slate-600 text-sm sm:text-base max-w-xl">
-              25 branch locations across Gujarat, Maharashtra, Madhya Pradesh &amp; Rajasthan for HP &amp; Canon service, plus parts distribution across 8 states.
+              13 physical walk-in centers and technical labs across Gujarat, Maharashtra, and Madhya Pradesh, with network coverage in 4 states and spares supply across 8 states.
             </p>
           </div>
 
@@ -25,7 +25,7 @@ export const HomeReach: React.FC = () => {
             href="/locations"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-xs font-bold text-white transition-all self-start md:self-auto group shadow-xs hover:shadow-sm"
           >
-            <span>Explore All 25 Branches on Map</span>
+            <span>Explore All 13 Locations on Map</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
@@ -33,8 +33,8 @@ export const HomeReach: React.FC = () => {
         {/* 4 Quick Stat Banners */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 text-center">
-            <span className="text-2xl sm:text-3xl font-black text-slate-900 block font-mono">25</span>
-            <span className="text-xs text-slate-600 font-medium mt-1 block">Branch Locations</span>
+            <span className="text-2xl sm:text-3xl font-black text-slate-900 block font-mono">13</span>
+            <span className="text-xs text-slate-600 font-medium mt-1 block">Certified Direct Hubs</span>
           </div>
           <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 text-center">
             <span className="text-2xl sm:text-3xl font-black text-blue-700 block font-mono">4 States</span>

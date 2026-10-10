@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
 
             {/* Concise Supporting Statement (1 sentence, no filler) */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
-              Direct authorised service partner for <strong className="text-slate-900 font-semibold">HP &amp; Canon</strong> serving <strong className="text-blue-700 font-semibold">Gujarat, Rajasthan, Maharashtra &amp; Madhya Pradesh</strong> across 25 branch cities, with chip-level labs and our official Vivek Infotech online parts store.
+              Direct authorised service partner for <strong className="text-slate-900 font-semibold">HP &amp; Canon</strong> serving <strong className="text-blue-700 font-semibold">Gujarat, Rajasthan, Maharashtra &amp; Madhya Pradesh</strong> with 13 direct service hubs, chip-level labs, and our official Vivek Infotech online parts store.
             </p>
 
             {/* Visual Credibility Pillars (Short + Scannable) */}
@@ -54,8 +54,8 @@ export const Hero: React.FC = () => {
                 <span className="text-xs text-slate-500 font-medium">GJ, RJ, MH &amp; MP</span>
               </div>
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
-                <span className="text-2xl font-black text-slate-900 block">25</span>
-                <span className="text-xs text-slate-500 font-medium">Branch Cities</span>
+                <span className="text-2xl font-black text-slate-900 block">13</span>
+                <span className="text-xs text-slate-500 font-medium">Direct Service Hubs</span>
               </div>
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
                 <span className="text-2xl font-black text-slate-900 block">100+</span>
@@ -70,7 +70,7 @@ export const Hero: React.FC = () => {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-all hover:shadow-md"
               >
                 <MapPin className="w-4 h-4" />
-                <span>Locate 25 Service Branches</span>
+                <span>Locate 13 Service Hubs</span>
               </Link>
 
               <a

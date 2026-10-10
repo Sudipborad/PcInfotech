@@ -59,7 +59,7 @@ export const HomeWhatWeDo: React.FC = () => {
                 Authorised OEM Service
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                Official warranty &amp; out-of-warranty support across Gujarat, Maharashtra, Rajasthan &amp; MP with 25 branches.
+                Official warranty &amp; out-of-warranty support across Gujarat, Maharashtra, Rajasthan &amp; MP with 13 certified hubs.
               </p>
               <div className="space-y-1.5 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
@@ -76,7 +76,7 @@ export const HomeWhatWeDo: React.FC = () => {
               href="/locations"
               className="pt-4 mt-5 border-t border-slate-200 text-xs font-semibold text-blue-700 hover:text-blue-800 flex items-center justify-between"
             >
-              <span>View 25 Branches</span>
+              <span>View 13 Service Hubs</span>
               <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
