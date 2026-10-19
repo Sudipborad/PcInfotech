@@ -20,7 +20,13 @@ import {
   RotateCw,
   ShoppingBag
 } from "lucide-react";
+import { ThreePrinterMechanism } from "@/components/ThreePrinterMechanism";
 import Link from "next/link";
+import { CircuitGridBackground } from "@/components/three/CircuitGridBackground";
+import { WhatWeDoHexBackground } from "@/components/three/WhatWeDoHexBackground";
+import { HeroTechBackground } from "@/components/three/HeroTechBackground";
+import { JourneyStreamBackground } from "@/components/three/JourneyStreamBackground";
+import { CtaVortexBackground } from "@/components/three/CtaVortexBackground";
 
 export const metadata: Metadata = {
   title: "Services & Capabilities | PC Infotech Solutions — Authorized OEM Repair & Spares",
@@ -57,8 +63,10 @@ export default function ServicesPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="pt-28 pb-16 lg:pt-36 lg:pb-20 bg-gradient-to-b from-blue-50/60 via-white to-slate-50 border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-20 bg-gradient-to-b from-blue-50/60 via-white to-slate-50 border-b border-slate-200/80 overflow-hidden">
+        {/* Three.js Perspective Circuit Grid Background */}
+        <CircuitGridBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold mb-4">
               <Layers className="w-3.5 h-3.5 text-blue-700" />
@@ -75,8 +83,10 @@ export default function ServicesPage() {
       </section>
 
       {/* 4 Core Pillars Detailed Breakdown */}
-      <section className="py-20 bg-white border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-white border-b border-slate-200/80 overflow-hidden">
+        {/* Three.js Hex Circuit Background */}
+        <WhatWeDoHexBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mb-14">
             <span className="text-xs font-bold text-blue-700 uppercase tracking-wider block mb-2">
               Service Specializations
@@ -266,8 +276,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Dedicated Online Store & Parts Catalog Showcase */}
-      <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-950 text-white border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-gradient-to-b from-slate-900 to-slate-950 text-white border-b border-slate-800 overflow-hidden">
+        {/* Three.js 3D Tech Particle Wave Background */}
+        <HeroTechBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold mb-3">
@@ -397,8 +409,10 @@ export default function ServicesPage() {
       </section>
 
       {/* 4-Step Technical Quality & Repair Workflow */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-slate-50 border-b border-slate-200/80 overflow-hidden">
+        {/* Three.js Timeline Chrono Stream Background */}
+        <JourneyStreamBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mb-14">
             <span className="text-xs font-bold text-blue-700 uppercase tracking-wider block mb-2">
               Engineering Workflow
@@ -461,39 +475,51 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Interactive 3D Hardware Simulation Showcase */}
+      <section className="py-20 bg-slate-900 border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ThreePrinterMechanism />
+        </div>
+      </section>
+
       {/* Action Banner */}
       <section className="py-16 bg-white border-b border-slate-200/80">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="p-8 sm:p-12 rounded-3xl bg-blue-50/80 border border-blue-100 flex flex-col items-center">
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-              Have a Printer Issue or Require Genuine Parts?
-            </h2>
-            <p className="mt-2 text-slate-600 text-xs sm:text-sm max-w-xl leading-relaxed">
-              Locate any of our 13 certified service hubs across Gujarat, Maharashtra, and Madhya Pradesh, order directly from our online parts store, or call our Pune central coordination desk.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/locations"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold shadow-xs transition-colors"
-              >
-                <MapPin className="w-4 h-4" />
-                <span>Locate 13 Service Hubs (Map)</span>
-              </Link>
-              <a
-                href="https://vivekinfotech.catalog.to/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors shadow-xs"
-              >
-                <ShoppingBag className="w-4 h-4" />
-                <span>Shop Parts Online</span>
-              </a>
-              <a
-                href="tel:02024495041"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 text-xs font-bold transition-colors shadow-2xs"
-              >
-                <span>Call Pune HQ: 020 24495041</span>
-              </a>
+          <div className="relative p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-slate-900 to-blue-950 text-white shadow-md flex flex-col items-center overflow-hidden">
+            {/* Three.js Cybernetic Vortex Background */}
+            <CtaVortexBackground />
+
+            <div className="relative z-10 flex flex-col items-center">
+              <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                Have a Printer Issue or Require Genuine Parts?
+              </h2>
+              <p className="mt-2 text-slate-300 text-xs sm:text-sm max-w-xl leading-relaxed">
+                Locate any of our 13 certified service hubs across Gujarat, Maharashtra, and Madhya Pradesh, order directly from our online parts store, or call our Pune central coordination desk.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                <Link
+                  href="/locations"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-xs transition-colors"
+                >
+                  <MapPin className="w-4 h-4" />
+                  <span>Locate 13 Service Hubs (Map)</span>
+                </Link>
+                <a
+                  href="https://vivekinfotech.catalog.to/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors shadow-xs"
+                >
+                  <ShoppingBag className="w-4 h-4" />
+                  <span>Shop Parts Online</span>
+                </a>
+                <a
+                  href="tel:02024495041"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold transition-colors"
+                >
+                  <span>Call Pune HQ: 020 24495041</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

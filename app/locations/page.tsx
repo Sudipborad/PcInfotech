@@ -7,6 +7,8 @@ import { Locations } from "@/components/Locations";
 import { MapPin, Network, Phone, Mail, Building2, ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { companyData } from "@/data/company";
+import { ReachGlobeBackground } from "@/components/three/ReachGlobeBackground";
+import { ConstellationGridBackground } from "@/components/three/ConstellationGridBackground";
 
 export const metadata: Metadata = {
   title: "Service Center Locations | PC Infotech Solutions — 4 States (GJ, MH, MP & RJ)",
@@ -20,8 +22,10 @@ export default function LocationsPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="pt-28 pb-12 lg:pt-36 lg:pb-16 bg-gradient-to-b from-blue-50/60 via-white to-slate-50 border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-28 pb-12 lg:pt-36 lg:pb-16 bg-gradient-to-b from-blue-50/60 via-white to-slate-50 border-b border-slate-200/80 overflow-hidden">
+        {/* Three.js Digital Network Globe Background */}
+        <ReachGlobeBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold mb-4">
               <MapPin className="w-3.5 h-3.5 text-blue-700" />
@@ -41,8 +45,10 @@ export default function LocationsPage() {
       <Locations />
 
       {/* 8-State Logistics & Central Support Desk */}
-      <section className="py-20 bg-white border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-white border-b border-slate-200/80 overflow-hidden">
+        {/* Three.js Constellation Network Background */}
+        <ConstellationGridBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* 8 States Logistics (7 cols) */}
             <div className="lg:col-span-7 space-y-4">

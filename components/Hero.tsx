@@ -15,14 +15,18 @@ import {
   ShoppingBag,
   ExternalLink
 } from "lucide-react";
+import { HeroTechBackground } from "./three/HeroTechBackground";
 
 export const Hero: React.FC = () => {
   return (
     <section
       id="overview"
-      className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 bg-gradient-to-b from-slate-50/70 via-white to-white border-b border-slate-200/80"
+      className="relative pt-24 pb-16 lg:pt-32 lg:pb-20 bg-gradient-to-b from-slate-50/70 via-white to-white border-b border-slate-200/80 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Three.js Interactive 3D Tech Background Canvas */}
+      <HeroTechBackground />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Split Editorial Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Bold Company Proposition (7 cols) */}

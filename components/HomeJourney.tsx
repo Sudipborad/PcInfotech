@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight, GraduationCap, CheckCircle2 } from "lucide-react";
 import { companyData } from "@/data/company";
+import { JourneyStreamBackground } from "./three/JourneyStreamBackground";
 
 const summaryTimeline = [
   {
@@ -37,8 +38,11 @@ const summaryTimeline = [
 
 export const HomeJourney: React.FC = () => {
   return (
-    <section className="py-20 lg:py-24 bg-slate-50 text-slate-800 border-b border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 lg:py-24 bg-slate-50 text-slate-800 border-b border-slate-200/80 overflow-hidden">
+      {/* Three.js Timeline Chrono Stream Background */}
+      <JourneyStreamBackground />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>

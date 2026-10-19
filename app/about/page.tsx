@@ -19,6 +19,12 @@ import {
   Trophy
 } from "lucide-react";
 import Link from "next/link";
+import { JourneyStreamBackground } from "@/components/three/JourneyStreamBackground";
+import { GyroLatticeBackground } from "@/components/three/GyroLatticeBackground";
+import { CircuitGridBackground } from "@/components/three/CircuitGridBackground";
+import { AchievementsFacetedBackground } from "@/components/three/AchievementsFacetedBackground";
+import { ConstellationGridBackground } from "@/components/three/ConstellationGridBackground";
+import { CtaVortexBackground } from "@/components/three/CtaVortexBackground";
 
 export const metadata: Metadata = {
   title: "About Us | PC Infotech Solutions — Origin, Leadership & 30-Year Journey",
@@ -83,8 +89,10 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="pt-28 pb-16 lg:pt-36 lg:pb-20 bg-gradient-to-b from-blue-50/60 via-white to-slate-50 border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-20 bg-gradient-to-b from-blue-50/60 via-white to-slate-50 border-b border-slate-200/80 overflow-hidden">
+        {/* Three.js Timeline Chrono Stream Background */}
+        <JourneyStreamBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold mb-4">
               <Compass className="w-3.5 h-3.5 text-blue-700" />
@@ -101,8 +109,10 @@ export default function AboutPage() {
       </section>
 
       {/* Founder & Core Philosophy Section */}
-      <section className="py-16 lg:py-20 bg-white border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 lg:py-20 bg-white border-b border-slate-200/80 overflow-hidden">
+        {/* Three.js Gyroscope Lattice Background */}
+        <GyroLatticeBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Philosophy Banner (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
@@ -172,8 +182,10 @@ export default function AboutPage() {
       </section>
 
       {/* Visual Timeline of the Company Journey */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-slate-50 border-b border-slate-200/80 overflow-hidden">
+        {/* Three.js Perspective Circuit Grid Background */}
+        <CircuitGridBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-bold text-blue-700 uppercase tracking-wider block mb-2">
               Chronological Evolution
@@ -223,8 +235,10 @@ export default function AboutPage() {
       </section>
 
       {/* OEM Honors & Canon National Award Showcase */}
-      <section className="py-20 bg-white border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-white border-b border-slate-200/80 overflow-hidden">
+        {/* Three.js Faceted Crystal Polyhedra Background */}
+        <AchievementsFacetedBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left: Authentic Award Photograph (5 cols) */}
             <div className="lg:col-span-5">
@@ -318,8 +332,10 @@ export default function AboutPage() {
       </section>
 
       {/* Group Corporate Architecture & Headquarters */}
-      <section className="py-20 bg-white border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 bg-white border-b border-slate-200/80 overflow-hidden">
+        {/* Three.js Constellation Network Background */}
+        <ConstellationGridBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mb-12">
             <span className="text-xs font-bold text-blue-700 uppercase tracking-wider block mb-2">
               Corporate Structure
@@ -386,8 +402,11 @@ export default function AboutPage() {
           </div>
 
           {/* Pune Corporate Headquarters Card */}
-          <div className="p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-blue-950 text-white shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="space-y-2 max-w-xl">
+          <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-blue-950 text-white shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6 overflow-hidden">
+            {/* Three.js Cybernetic Vortex Background */}
+            <CtaVortexBackground />
+
+            <div className="space-y-2 max-w-xl relative z-10">
               <span className="text-xs font-bold text-blue-300 uppercase tracking-wider block">
                 Central Headquarters
               </span>
@@ -404,14 +423,16 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <Link
-              href="/locations"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-xs transition-colors self-start md:self-auto"
-            >
-              <MapPin className="w-4 h-4" />
-              <span>Explore All 13 Hub Locations</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="relative z-10">
+              <Link
+                href="/locations"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold shadow-xs transition-colors self-start md:self-auto"
+              >
+                <MapPin className="w-4 h-4" />
+                <span>Explore All 13 Hub Locations</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

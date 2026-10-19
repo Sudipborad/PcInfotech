@@ -11,6 +11,7 @@ import {
   Building2, 
   CalendarCheck2 
 } from "lucide-react";
+import { GrowthMeshBackground } from "./three/GrowthMeshBackground";
 
 // Dynamic import with SSR disabled for Recharts
 const GrowthChart = dynamic(
@@ -36,8 +37,11 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export const Growth: React.FC = () => {
   return (
-    <section id="growth" className="py-20 lg:py-24 bg-white text-slate-800 border-b border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="growth" className="relative py-20 lg:py-24 bg-white text-slate-800 border-b border-slate-200/80 overflow-hidden">
+      {/* Three.js Topographic Growth Mesh Background */}
+      <GrowthMeshBackground />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="max-w-3xl mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 mb-3">

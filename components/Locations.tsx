@@ -15,6 +15,7 @@ import {
   Navigation,
   ArrowUpRight
 } from "lucide-react";
+import { CircuitGridBackground } from "./three/CircuitGridBackground";
 
 // Dynamic import with SSR disabled for Leaflet Map
 const LocationMap = dynamic(
@@ -60,8 +61,11 @@ export const Locations: React.FC = () => {
   }, [selectedState, selectedBrand, searchQuery]);
 
   return (
-    <section id="locations" className="py-20 bg-slate-50 text-slate-800 border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="locations" className="relative py-20 bg-slate-50 text-slate-800 border-b border-slate-200 overflow-hidden">
+      {/* Three.js Circuit Perspective Grid Background */}
+      <CircuitGridBackground />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 mb-3">

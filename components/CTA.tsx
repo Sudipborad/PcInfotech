@@ -2,16 +2,21 @@
 import React from "react";
 import Link from "next/link";
 import { MapPin, Phone, Mail, Wrench, ShieldCheck } from "lucide-react";
+import { CtaVortexBackground } from "./three/CtaVortexBackground";
 
 export const CTA: React.FC = () => {
   return (
     <section className="py-20 lg:py-24 bg-slate-50 text-slate-800 border-b border-slate-200/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl p-8 sm:p-14 bg-gradient-to-br from-blue-900 to-slate-900 text-white shadow-md text-center flex flex-col items-center relative overflow-hidden">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/10 text-blue-200 border border-white/15 mb-6">
-            <ShieldCheck className="w-3.5 h-3.5 text-blue-300" />
-            <span>Ready for Corporate SLAs &amp; Walk-In Support</span>
-          </div>
+          {/* Three.js Cybernetic Vortex Background */}
+          <CtaVortexBackground />
+
+          <div className="relative z-10 flex flex-col items-center">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/10 text-blue-200 border border-white/15 mb-6">
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-300" />
+              <span>Ready for Corporate SLAs &amp; Walk-In Support</span>
+            </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight max-w-3xl leading-tight">
             Connect with Gujarat &amp; Western India&apos;s Proven Engineering Network.
@@ -51,6 +56,7 @@ export const CTA: React.FC = () => {
             <span>• 100+ Hardware Engineers</span>
             <span>• Proprietary Component Labs</span>
             <span>• Spares Logistics Across 8 States</span>
+          </div>
           </div>
         </div>
       </div>

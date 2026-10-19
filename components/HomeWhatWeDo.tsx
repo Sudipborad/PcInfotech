@@ -1,11 +1,16 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { ShieldCheck, Cpu, Boxes, ArrowRight, Check, ShoppingBag, ExternalLink } from "lucide-react";
+import { WhatWeDoHexBackground } from "./three/WhatWeDoHexBackground";
 
 export const HomeWhatWeDo: React.FC = () => {
   return (
-    <section className="py-20 lg:py-24 bg-white text-slate-800 border-b border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 lg:py-24 bg-white text-slate-800 border-b border-slate-200/80 overflow-hidden">
+      {/* Three.js Hex Circuit Background */}
+      <WhatWeDoHexBackground />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>

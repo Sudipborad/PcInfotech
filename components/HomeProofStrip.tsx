@@ -1,10 +1,15 @@
+"use client";
 import React from "react";
 import { ShieldCheck, Cpu, Building2, Trophy, Clock, ShoppingBag, ExternalLink } from "lucide-react";
+import { StreamParticleStripBackground } from "./three/StreamParticleStripBackground";
 
 export const HomeProofStrip: React.FC = () => {
   return (
-    <div className="bg-slate-900 text-white border-y border-slate-800 py-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative bg-slate-900 text-white border-y border-slate-800 py-6 overflow-hidden">
+      {/* Three.js Horizontal Stream Particle Background */}
+      <StreamParticleStripBackground />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-center">
           {/* Fact 1 */}
           <div className="flex items-start gap-3.5">
