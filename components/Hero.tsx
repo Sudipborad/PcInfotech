@@ -51,27 +51,27 @@ export const Hero: React.FC = () => {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
                 <span className="text-2xl font-black text-slate-900 block">30+</span>
-                <span className="text-xs text-slate-500 font-medium">Years in Business</span>
+                <span className="text-xs text-slate-600 font-semibold">Years in Business</span>
               </div>
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
                 <span className="text-2xl font-black text-blue-700 block">4 States</span>
-                <span className="text-xs text-slate-500 font-medium">GJ, RJ, MH &amp; MP</span>
+                <span className="text-xs text-slate-600 font-semibold">GJ, RJ, MH &amp; MP</span>
               </div>
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
                 <span className="text-2xl font-black text-slate-900 block">13</span>
-                <span className="text-xs text-slate-500 font-medium">Direct Service Hubs</span>
+                <span className="text-xs text-slate-600 font-semibold">Direct Service Hubs</span>
               </div>
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
                 <span className="text-2xl font-black text-slate-900 block">100+</span>
-                <span className="text-xs text-slate-500 font-medium">Hardware Engineers</span>
+                <span className="text-xs text-slate-600 font-semibold">Hardware Engineers</span>
               </div>
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-3">
+            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
               <Link
                 href="/locations"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-all hover:shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-xs text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-all hover:shadow-md focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 <MapPin className="w-4 h-4" />
                 <span>Locate 13 Service Hubs</span>
@@ -81,7 +81,8 @@ export const Hero: React.FC = () => {
                 href="https://vivekinfotech.catalog.to/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-xs text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-2xs transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-2xs transition-all focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 focus-visible:outline-none"
+                aria-label="Visit Vivek Infotech Online Spare Parts Store (opens in new window)"
               >
                 <ShoppingBag className="w-4 h-4 text-emerald-700" />
                 <span>Online Parts Store</span>
@@ -90,7 +91,7 @@ export const Hero: React.FC = () => {
 
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl font-bold text-xs text-slate-700 bg-white hover:bg-slate-50 border border-slate-300/80 shadow-2xs transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-xs text-slate-700 bg-white hover:bg-slate-50 border border-slate-300/80 shadow-2xs transition-all focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:outline-none"
               >
                 <Cpu className="w-4 h-4 text-blue-700" />
                 <span>Capabilities</span>

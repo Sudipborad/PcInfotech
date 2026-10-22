@@ -22,21 +22,21 @@ export const Footer: React.FC = () => {
                 <span className="text-sm font-extrabold tracking-tight text-slate-900 leading-tight">
                   PC INFOTECH <span className="text-[#f0453f]">SOLUTIONS</span>
                 </span>
-                <span className="text-[11px] text-slate-500 font-medium">
+                <span className="text-xs text-slate-600 font-medium">
                   Founded 1995 • Proprietor: Mr. Chetan Kumbhani
                 </span>
               </div>
             </div>
 
-            <p className="text-slate-600 text-xs leading-relaxed max-w-sm">
+            <p className="text-slate-700 text-xs leading-relaxed max-w-sm">
               Authorised Service Provider for HP (Gujarat, Rajasthan, Maharashtra &amp; Madhya Pradesh) and Canon (Gujarat &amp; Maharashtra). Operating 13 direct service hubs with over 100 hardware and support engineers, chip-level labs, and our online spares store.
             </p>
 
-            <div className="pt-2 space-y-1">
-              <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block">
+            <div className="pt-2 space-y-1.5">
+              <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block">
                 Group Companies &amp; E-Commerce:
               </span>
-              <ul className="text-slate-600 space-y-1">
+              <ul className="text-slate-700 space-y-1">
                 <li className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-700 shrink-0" />
                   <span>PC Infotech Solutions (Service Network)</span>
@@ -47,13 +47,13 @@ export const Footer: React.FC = () => {
                     href="https://vivekinfotech.catalog.to/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-emerald-700 hover:text-emerald-800 underline underline-offset-2"
+                    className="font-semibold text-emerald-800 hover:text-emerald-900 underline underline-offset-2 focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:outline-none rounded"
                   >
                     Vivek Infotech (Online Store ↗)
                   </a>
                 </li>
                 <li className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-slate-500 shrink-0" />
                   <span>Swami Vivekanand Infocare</span>
                 </li>
               </ul>
@@ -170,12 +170,12 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom copyright and legal integrity */}
-        <div className="pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
+        <div className="pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-600 text-xs">
           <div>
             © {new Date().getFullYear()} {companyData.name}. All verified operational data from certified organizational profile.
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-slate-600">
+            <span className="text-slate-700 font-medium">
               Vision: &ldquo;{companyData.corePhilosophy}&rdquo;
             </span>
           </div>

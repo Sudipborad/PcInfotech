@@ -50,6 +50,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="bg-slate-50 text-slate-800 min-h-screen selection:bg-blue-600 selection:text-white">
+        {/* Accessible Keyboard Skip Link */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:bg-blue-700 focus:text-white focus:text-xs focus:font-bold focus:rounded-xl focus:shadow-xl focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 focus:outline-none transition-all"
+        >
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

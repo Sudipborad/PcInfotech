@@ -72,11 +72,33 @@ export const ConstellationGridBackground: React.FC = () => {
     const lineMesh = new THREE.LineSegments(lineGeom, lineMat);
     group.add(lineMesh);
 
+    // Motion & visibility guards
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let isVisible = true;
+    let observer: IntersectionObserver | null = null;
+    if (typeof IntersectionObserver !== "undefined") {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          isVisible = entry.isIntersecting;
+        },
+        { threshold: 0.05 }
+      );
+      observer.observe(container);
+    }
+
     let animId: number;
     let clock = new THREE.Clock();
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
+      if (!isVisible) return;
+      if (prefersReducedMotion) {
+        renderer.render(scene, camera);
+        return;
+      }
       const elapsedTime = clock.getElapsedTime();
 
       // Update node positions with gentle bounding box bounce
@@ -133,6 +155,7 @@ export const ConstellationGridBackground: React.FC = () => {
 
     return () => {
       cancelAnimationFrame(animId);
+      if (observer) observer.disconnect();
       window.removeEventListener("resize", handleResize);
       if (container && renderer.domElement && container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);

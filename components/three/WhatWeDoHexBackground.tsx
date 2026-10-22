@@ -104,16 +104,38 @@ export const WhatWeDoHexBackground: React.FC = () => {
     const onResize = () => {
       if (!container) return;
       camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix;
+      camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
     };
     window.addEventListener("resize", onResize);
+
+    // Motion & visibility guards
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let isVisible = true;
+    let observer: IntersectionObserver | null = null;
+    if (typeof IntersectionObserver !== "undefined") {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          isVisible = entry.isIntersecting;
+        },
+        { threshold: 0.05 }
+      );
+      observer.observe(container);
+    }
 
     let animId: number;
     let clock = new THREE.Clock();
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
+      if (!isVisible) return;
+      if (prefersReducedMotion) {
+        renderer.render(scene, camera);
+        return;
+      }
       const elapsed = clock.getElapsedTime();
 
       hexGroup.rotation.y = mouseX * 0.002;
@@ -133,9 +155,10 @@ export const WhatWeDoHexBackground: React.FC = () => {
 
     return () => {
       cancelAnimationFrame(animId);
+      if (observer) observer.disconnect();
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", onResize);
-      if (container && renderer.domElement) {
+      if (container && renderer.domElement && container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
       nodeGeom.dispose();

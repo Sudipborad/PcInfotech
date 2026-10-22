@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-800 relative selection:bg-blue-600 selection:text-white">
+    <main id="main-content" className="min-h-screen bg-slate-50 text-slate-800 relative selection:bg-blue-600 selection:text-white">
       <Navbar />
       
       {/* 1. Hero: Who is the company & what does it do? */}

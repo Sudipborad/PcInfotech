@@ -59,7 +59,7 @@ const repairProcess = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-800 relative selection:bg-blue-600 selection:text-white">
+    <main id="main-content" className="min-h-screen bg-slate-50 text-slate-800 relative selection:bg-blue-600 selection:text-white">
       <Navbar />
 
       {/* Hero Header */}

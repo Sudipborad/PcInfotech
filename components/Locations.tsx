@@ -13,7 +13,8 @@ import {
   Search, 
   Phone, 
   Navigation,
-  ArrowUpRight
+  ArrowUpRight,
+  X
 } from "lucide-react";
 import { CircuitGridBackground } from "./three/CircuitGridBackground";
 
@@ -73,7 +74,7 @@ export const Locations: React.FC = () => {
             <span>Interactive Geographic Network</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-            13 Verified Service Centers & Coverage
+            13 Verified Service Centers &amp; Coverage
           </h2>
           <p className="mt-2 text-slate-600 text-sm sm:text-base">
             Click any service center to focus on the map and get instant turn-by-turn directions in Google Maps.
@@ -85,18 +86,33 @@ export const Locations: React.FC = () => {
           {/* Top Row: Search Input + Results Count */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
             <div className="relative flex-1 max-w-xl">
-              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <label htmlFor="service-center-search" className="sr-only">
+                Search service centers by city, center name, or landmark
+              </label>
+              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
+                id="service-center-search"
                 type="text"
                 placeholder="Search city, center name, or landmark (e.g. Ellisbridge, Athwa Gate)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 text-slate-900 placeholder-slate-400 border border-slate-200 text-xs focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
+                aria-label="Search service center by city, center name, or landmark"
+                className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-slate-50 text-slate-900 placeholder-slate-500 border border-slate-200 text-xs focus:outline-none focus:border-blue-600 focus:bg-white focus-visible:ring-2 focus-visible:ring-blue-600 transition-all"
               />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-200/80 transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none"
+                  aria-label="Clear search input"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
             </div>
             
-            <div className="text-xs font-semibold text-slate-500 self-start sm:self-auto flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            <div className="text-xs font-semibold text-slate-600 self-start sm:self-auto flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>{filteredLocations.length} of {serviceCentersData.length} Centers Active</span>
             </div>
           </div>
@@ -104,8 +120,8 @@ export const Locations: React.FC = () => {
           {/* Bottom Row: State & Brand Filter Pills (Clean Wrapping, Zero Scrollbars) */}
           <div className="pt-3 border-t border-slate-100 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             {/* State Filter */}
-            <div className="flex flex-wrap items-center gap-1.5">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mr-1 shrink-0">
+            <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Filter by region">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-700 mr-1 shrink-0">
                 Region:
               </span>
               {statesList.map((state) => {
@@ -116,15 +132,17 @@ export const Locations: React.FC = () => {
                 return (
                   <button
                     key={state}
+                    type="button"
                     onClick={() => setSelectedState(state)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    aria-pressed={isSelected}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none ${
                       isSelected
-                        ? "bg-blue-700 text-white shadow-xs"
+                        ? "bg-blue-700 text-white shadow-xs font-bold"
                         : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                     }`}
                   >
                     <span>{state}</span>
-                    <span className={`ml-1.5 text-[10px] opacity-80 ${isSelected ? "text-blue-100" : "text-slate-500"}`}>
+                    <span className={`ml-1.5 text-xs opacity-80 ${isSelected ? "text-blue-100" : "text-slate-600"}`}>
                       ({count})
                     </span>
                   </button>
@@ -133,8 +151,8 @@ export const Locations: React.FC = () => {
             </div>
 
             {/* Brand Filter */}
-            <div className="flex flex-wrap items-center gap-1.5">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mr-1 shrink-0">
+            <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Filter by brand authorization">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-700 mr-1 shrink-0">
                 Brand Focus:
               </span>
               {brandList.map((brand) => {
@@ -142,10 +160,12 @@ export const Locations: React.FC = () => {
                 return (
                   <button
                     key={brand}
+                    type="button"
                     onClick={() => setSelectedBrand(brand)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    aria-pressed={isSelected}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:outline-none ${
                       isSelected
-                        ? "bg-slate-900 text-white shadow-xs"
+                        ? "bg-slate-900 text-white shadow-xs font-bold"
                         : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                     }`}
                   >
@@ -221,8 +241,17 @@ export const Locations: React.FC = () => {
                 return (
                   <div
                     key={loc.id}
+                    role="button"
+                    tabIndex={0}
+                    aria-selected={isSelected}
                     onClick={() => setSelectedLocation(loc)}
-                    className={`p-4 rounded-xl cursor-pointer transition-all border ${
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setSelectedLocation(loc);
+                      }
+                    }}
+                    className={`p-4 rounded-xl cursor-pointer transition-all border focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none ${
                       isSelected
                         ? "bg-white border-blue-600 shadow-md ring-1 ring-blue-600/30"
                         : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-xs"
@@ -234,7 +263,7 @@ export const Locations: React.FC = () => {
                           <span className="text-xs font-black text-blue-700 uppercase tracking-wider">
                             {loc.city}
                           </span>
-                          <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-100 text-slate-600">
+                          <span className="px-1.5 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700">
                             {loc.state}
                           </span>
                         </div>
@@ -243,7 +272,7 @@ export const Locations: React.FC = () => {
                         </h4>
                       </div>
 
-                      <span className="text-[10px] px-2 py-0.5 rounded-full font-semibold bg-blue-50 text-blue-800 border border-blue-200 whitespace-nowrap">
+                      <span className="text-xs px-2 py-0.5 rounded-full font-semibold bg-blue-50 text-blue-800 border border-blue-200 whitespace-nowrap">
                         Est. {loc.establishedYear}
                       </span>
                     </div>
@@ -259,7 +288,7 @@ export const Locations: React.FC = () => {
 
                     {/* Action Row: Get Directions in Google Maps & Call */}
                     <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between gap-2">
-                      <span className="text-[10px] text-blue-700 italic truncate">
+                      <span className="text-xs text-blue-700 font-medium italic truncate">
                         {loc.specialization}
                       </span>
 
@@ -268,7 +297,8 @@ export const Locations: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-colors whitespace-nowrap"
+                        aria-label={`Get directions to ${loc.name} in ${loc.city} on Google Maps (opens in new window)`}
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-colors whitespace-nowrap focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none"
                         title="Get directions to this service center in Google Maps"
                       >
                         <Navigation className="w-3 h-3" />

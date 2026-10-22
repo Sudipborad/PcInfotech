@@ -26,10 +26,10 @@ export const CTA: React.FC = () => {
             Visit any of our 13 certified service centers across Gujarat, Maharashtra, and Madhya Pradesh, or contact our central Pune desk for commercial AMC coordination.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-3 w-full sm:w-auto">
             <Link
               href="/locations"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs text-slate-900 bg-white hover:bg-slate-100 shadow-sm transition-all hover:scale-[1.02]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs text-slate-900 bg-white hover:bg-slate-100 shadow-sm transition-all hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
             >
               <MapPin className="w-4 h-4 text-blue-700" />
               <span>Locate Nearest Hub (13 Centers)</span>
@@ -37,7 +37,7 @@ export const CTA: React.FC = () => {
 
             <a
               href="tel:02024495041"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs text-white bg-blue-700 hover:bg-blue-800 border border-blue-600 shadow-sm transition-all hover:scale-[1.02]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs text-white bg-blue-700 hover:bg-blue-800 border border-blue-600 shadow-sm transition-all hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:outline-none"
             >
               <Phone className="w-4 h-4 text-blue-200" />
               <span>Call Pune HQ: 020 24495041</span>
@@ -45,7 +45,7 @@ export const CTA: React.FC = () => {
 
             <a
               href="mailto:svipl.pune@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
             >
               <Mail className="w-4 h-4 text-slate-300" />
               <span>svipl.pune@gmail.com</span>

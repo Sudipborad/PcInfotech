@@ -62,7 +62,8 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all ${
+                  aria-current={isActive ? "page" : undefined}
+                  className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:outline-none ${
                     isActive
                       ? "text-blue-700 bg-white shadow-2xs border border-slate-200/80 font-bold"
                       : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
@@ -78,7 +79,7 @@ export const Navbar: React.FC = () => {
           <div className="hidden sm:flex items-center gap-2.5">
             <a
               href="tel:02024495041"
-              className="hidden lg:flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-blue-700 py-2 px-3 rounded-xl border border-slate-200/80 hover:border-blue-300 bg-white transition-colors"
+              className="hidden lg:flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-blue-700 py-2 px-3 rounded-xl border border-slate-200/80 hover:border-blue-300 bg-white transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none"
               title="Pune HQ Support Desk"
             >
               <Phone className="w-3.5 h-3.5 text-blue-700" />
@@ -88,7 +89,7 @@ export const Navbar: React.FC = () => {
               href="https://vivekinfotech.catalog.to/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-xl text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-2xs transition-all"
+              className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-xl text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-2xs transition-all focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:outline-none"
               title="Vivek Infotech — Live Printer & Spare Parts Catalog"
             >
               <ShoppingBag className="w-3.5 h-3.5 text-emerald-700" />
@@ -97,7 +98,7 @@ export const Navbar: React.FC = () => {
             </a>
             <Link
               href="/locations"
-              className="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl text-white bg-blue-700 hover:bg-blue-800 shadow-xs transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl text-white bg-blue-700 hover:bg-blue-800 shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none"
             >
               <MapPin className="w-3.5 h-3.5" />
               <span>13 Hubs</span>
@@ -110,7 +111,8 @@ export const Navbar: React.FC = () => {
               href="https://vivekinfotech.catalog.to/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 px-2.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold flex items-center gap-1"
+              className="p-1.5 px-2.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:outline-none"
+              aria-label="Visit Vivek Infotech Online Spare Parts Store"
             >
               <ShoppingBag className="w-3.5 h-3.5 text-emerald-700" />
               <span>Store</span>
@@ -118,8 +120,10 @@ export const Navbar: React.FC = () => {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"
-              aria-label="Toggle Navigation Menu"
+              className="p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -128,7 +132,7 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden pt-3 pb-4 border-t border-slate-100 mt-3 space-y-1 bg-white">
+          <div id="mobile-navigation" className="md:hidden pt-3 pb-4 border-t border-slate-100 mt-3 space-y-1 bg-white">
             {navItems.map((item) => {
               const isActive =
                 item.href === "/"
@@ -139,8 +143,9 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={item.name}
                   href={item.href}
+                  aria-current={isActive ? "page" : undefined}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
+                  className={`block px-3 py-2.5 rounded-lg text-xs font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:outline-none ${
                     isActive
                       ? "text-blue-700 bg-blue-50 font-bold"
                       : "text-slate-700 hover:bg-slate-50"
