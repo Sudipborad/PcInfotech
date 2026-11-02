@@ -28,130 +28,72 @@ export const Hero: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Split Editorial Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column: Bold Company Proposition (7 cols) */}
-          <div className="lg:col-span-7 space-y-6">
-            {/* Accreditation Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-800 text-xs font-semibold tracking-wide">
-              <Award className="w-3.5 h-3.5 text-blue-700" />
-              <span>Two Trusted Brands. One Reliable Support. • HP &amp; Canon Authorised</span>
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          {/* Accreditation Eyebrow */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-800 text-xs font-semibold tracking-wide">
+            <Award className="w-3.5 h-3.5 text-blue-700" />
+            <span>Two Trusted Brands. One Reliable Support. • HP &amp; Canon Authorised</span>
+          </div>
+
+          {/* Clear, Bold Headline (Answers 'What does company do?') */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.15]">
+            Authorised IT Hardware, Printer Sales &amp; Spares Across 4 States.
+          </h1>
+
+          {/* Concise Supporting Statement */}
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
+            Direct authorised service partner for <strong className="text-slate-900 font-semibold">HP &amp; Canon</strong> serving <strong className="text-blue-700 font-semibold">Gujarat, Rajasthan, Maharashtra &amp; Madhya Pradesh</strong> with 13 direct service hubs, chip-level labs, and our official Vivek Infotech online parts store.
+          </p>
+
+          {/* Visual Credibility Pillars (Short + Scannable) */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-3xl mx-auto">
+            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
+              <span className="text-2xl font-black text-slate-900 block">30+</span>
+              <span className="text-xs text-slate-600 font-semibold">Years in Business</span>
             </div>
-
-            {/* Clear, Bold Headline (Answers 'What does company do?') */}
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-slate-900 leading-[1.15]">
-              Authorised IT Hardware, Printer Sales &amp; Spares Across 4 States.
-            </h1>
-
-            {/* Concise Supporting Statement (1 sentence, no filler) */}
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
-              Direct authorised service partner for <strong className="text-slate-900 font-semibold">HP &amp; Canon</strong> serving <strong className="text-blue-700 font-semibold">Gujarat, Rajasthan, Maharashtra &amp; Madhya Pradesh</strong> with 13 direct service hubs, chip-level labs, and our official Vivek Infotech online parts store.
-            </p>
-
-            {/* Visual Credibility Pillars (Short + Scannable) */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
-                <span className="text-2xl font-black text-slate-900 block">30+</span>
-                <span className="text-xs text-slate-600 font-semibold">Years in Business</span>
-              </div>
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
-                <span className="text-2xl font-black text-blue-700 block">4 States</span>
-                <span className="text-xs text-slate-600 font-semibold">GJ, RJ, MH &amp; MP</span>
-              </div>
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
-                <span className="text-2xl font-black text-slate-900 block">13</span>
-                <span className="text-xs text-slate-600 font-semibold">Direct Service Hubs</span>
-              </div>
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
-                <span className="text-2xl font-black text-slate-900 block">100+</span>
-                <span className="text-xs text-slate-600 font-semibold">Hardware Engineers</span>
-              </div>
+            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
+              <span className="text-2xl font-black text-blue-700 block">4 States</span>
+              <span className="text-xs text-slate-600 font-semibold">GJ, RJ, MH &amp; MP</span>
             </div>
-
-            {/* Primary Action Buttons */}
-            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
-              <Link
-                href="/locations"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-xs text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-all hover:shadow-md focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:outline-none"
-              >
-                <MapPin className="w-4 h-4" />
-                <span>Locate 13 Service Hubs</span>
-              </Link>
-
-              <a
-                href="https://vivekinfotech.catalog.to/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-2xs transition-all focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 focus-visible:outline-none"
-                aria-label="Visit Vivek Infotech Online Spare Parts Store (opens in new window)"
-              >
-                <ShoppingBag className="w-4 h-4 text-emerald-700" />
-                <span>Online Parts Store</span>
-                <ExternalLink className="w-3 h-3 opacity-70" />
-              </a>
-
-              <Link
-                href="/services"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-xs text-slate-700 bg-white hover:bg-slate-50 border border-slate-300/80 shadow-2xs transition-all focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:outline-none"
-              >
-                <Cpu className="w-4 h-4 text-blue-700" />
-                <span>Capabilities</span>
-              </Link>
+            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
+              <span className="text-2xl font-black text-slate-900 block">13</span>
+              <span className="text-xs text-slate-600 font-semibold">Direct Service Hubs</span>
+            </div>
+            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70">
+              <span className="text-2xl font-black text-slate-900 block">100+</span>
+              <span className="text-xs text-slate-600 font-semibold">Hardware Engineers</span>
             </div>
           </div>
 
-          {/* Right Column: High-Resolution Hardware Lab Showcase (5 cols) */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-md group bg-slate-900">
-              {/* Photo */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/hardware-lab-workbench.jpg"
-                alt="PC Infotech Component Diagnostic Workstation"
-                className="w-full h-[360px] sm:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-90"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+          {/* Primary Action Buttons */}
+          <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
+            <Link
+              href="/locations"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-xs text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-all hover:shadow-md focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:outline-none"
+            >
+              <MapPin className="w-4 h-4" />
+              <span>Locate 13 Service Hubs</span>
+            </Link>
 
-              {/* Top Floating Badge */}
-              <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-white bg-blue-700/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-xs">
-                  <Cpu className="w-3.5 h-3.5" />
-                  <span>SMD Micro-Soldering &amp; Logic Labs</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-300 bg-emerald-950/80 backdrop-blur-sm px-2.5 py-1 rounded-full border border-emerald-500/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Live Lab Operations
-                </span>
-              </div>
+            <a
+              href="https://vivekinfotech.catalog.to/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 shadow-2xs transition-all focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 focus-visible:outline-none"
+              aria-label="Visit Vivek Infotech Online Spare Parts Store (opens in new window)"
+            >
+              <ShoppingBag className="w-4 h-4 text-emerald-700" />
+              <span>Online Parts Store</span>
+              <ExternalLink className="w-3 h-3 opacity-70" />
+            </a>
 
-              {/* Bottom Details Overlay */}
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10 text-white space-y-2.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-blue-300">
-                    Proprietary Technical Infrastructure
-                  </span>
-                  <span className="text-[10px] text-slate-300 font-mono">10,000+ sq.ft ESD Labs</span>
-                </div>
-                <p className="text-xs text-slate-200 leading-snug">
-                  Component-level diagnostics on oscilloscopes, BGA rework stations, and printer formatter reconditioning.
-                </p>
-                <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[11px]">
-                  <Link
-                    href="/services"
-                    className="font-bold text-blue-300 hover:text-white flex items-center gap-1 transition-colors"
-                  >
-                    <span>View Engineering Scopes</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </Link>
-                  <Link
-                    href="/locations"
-                    className="font-semibold text-slate-300 hover:text-white flex items-center gap-1 transition-colors"
-                  >
-                    <MapPin className="w-3 h-3 text-blue-400" />
-                    <span>13 Physical Centers</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <Link
+              href="/services"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-xs text-slate-700 bg-white hover:bg-slate-50 border border-slate-300/80 shadow-2xs transition-all focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:outline-none"
+            >
+              <Cpu className="w-4 h-4 text-blue-700" />
+              <span>Capabilities</span>
+            </Link>
           </div>
         </div>
 

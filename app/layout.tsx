@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { BrandLoadingScreen } from "@/components/BrandLoadingScreen";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -57,6 +58,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <BrandLoadingScreen />
         {children}
       </body>
     </html>

@@ -66,7 +66,7 @@ export const companyData: CompanyInfo = {
     experience: "Key executive driving hardware procurement, system diagnostics, multi-vendor partnerships, and customer support standards across PC Infotech Solutions, Vivek Infotech, and Swami Vivekanand Infocare."
   },
   vision: "To simplify the life of people by providing optimum solutions while they face problems with their computer and peripherals, enabling them to enjoy great discoveries and new technologies.",
-  corePhilosophy: "Acquire knowledge first to justify your role of IT solution provider.",
+  corePhilosophy: "Technical excellence and customer trust through hands-on engineering.",
   groupCompanies: [
     "PC Infotech Solutions",
     "Vivek Infotech (Online Store: vivekinfotech.catalog.to)",

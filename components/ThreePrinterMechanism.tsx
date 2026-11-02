@@ -253,11 +253,11 @@ export const ThreePrinterMechanism: React.FC = () => {
 
     // --- Animation Loop ---
     let animId: number;
-    let clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const render = () => {
       animId = requestAnimationFrame(render);
-      const elapsed = clock.getElapsedTime();
+      const elapsed = (performance.now() - startTime) * 0.001;
 
       if (isPlayingRef.current) {
         const speed = speedRef.current;

@@ -97,7 +97,7 @@ export const GyroLatticeBackground: React.FC = () => {
     }
 
     let animId: number;
-    let clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
@@ -106,7 +106,7 @@ export const GyroLatticeBackground: React.FC = () => {
         renderer.render(scene, camera);
         return;
       }
-      const t = clock.getElapsedTime();
+      const t = (performance.now() - startTime) * 0.001;
 
       ring1.rotation.x = t * 0.25;
       ring1.rotation.y = t * 0.15;

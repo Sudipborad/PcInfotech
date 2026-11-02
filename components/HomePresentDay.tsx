@@ -73,8 +73,8 @@ export const HomePresentDay: React.FC = () => {
           </p>
         </div>
 
-        {/* 3 Core Physical Infrastructure Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {/* 2 Core Physical Network & Reach Highlights */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-3">
@@ -93,27 +93,6 @@ export const HomePresentDay: React.FC = () => {
             <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-700">
               <span>Direct OEM Authorized</span>
               <CheckCircle2 className="w-4 h-4 text-blue-600" />
-            </div>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-bold text-indigo-700 uppercase tracking-wider">
-                  Lab Infrastructure
-                </span>
-                <Layers className="w-5 h-5 text-indigo-700" />
-              </div>
-              <h3 className="text-xl font-black text-slate-900 mb-1">
-                10,000+ Sq.Ft ESD Labs
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Dedicated component rework facilities equipped with digital oscilloscopes, BGA rework stations, and ultrasonic cleaning baths.
-              </p>
-            </div>
-            <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-700">
-              <span>Proprietary Logic Repair</span>
-              <CheckCircle2 className="w-4 h-4 text-indigo-600" />
             </div>
           </div>
 

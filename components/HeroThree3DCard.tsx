@@ -323,11 +323,11 @@ export const HeroThree3DCard: React.FC = () => {
 
     // --- Animation Loop ---
     let reqId: number;
-    let clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const renderLoop = () => {
       reqId = requestAnimationFrame(renderLoop);
-      const elapsed = clock.getElapsedTime();
+      const elapsed = (performance.now() - startTime) * 0.001;
 
       // Auto rotation when enabled and not dragging
       if (autoRotateRef.current && !isDragging) {

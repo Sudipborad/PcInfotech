@@ -71,15 +71,15 @@ export const About: React.FC = () => {
           </p>
         </div>
 
-        {/* Founding Philosophy Banner */}
+        {/* Founding Leadership Banner */}
         <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs mb-14 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-3xl">
             <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider block">
-              Core Technical Philosophy
+              Leadership &amp; Technical Foundation
             </span>
-            <blockquote className="text-lg sm:text-xl font-bold text-slate-900 italic">
-              &ldquo;{companyData.corePhilosophy}&rdquo;
-            </blockquote>
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900">
+              Technical excellence and hands-on diagnostic mastery across every repair center.
+            </h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Founded by <strong className="text-slate-900 font-semibold">{companyData.founder.name}</strong>, B.E. (Electronics &amp; Telecommunications), Pune University (1994), whose hands-on leadership drives technical rigor across all 13 centers.
             </p>

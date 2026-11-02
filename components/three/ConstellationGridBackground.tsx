@@ -90,7 +90,7 @@ export const ConstellationGridBackground: React.FC = () => {
     }
 
     let animId: number;
-    let clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
@@ -99,7 +99,7 @@ export const ConstellationGridBackground: React.FC = () => {
         renderer.render(scene, camera);
         return;
       }
-      const elapsedTime = clock.getElapsedTime();
+      const elapsedTime = (performance.now() - startTime) * 0.001;
 
       // Update node positions with gentle bounding box bounce
       nodes.forEach((node) => {

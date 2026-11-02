@@ -116,7 +116,7 @@ export const JourneyStreamBackground: React.FC = () => {
     }
 
     let animId: number;
-    let clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
@@ -125,7 +125,7 @@ export const JourneyStreamBackground: React.FC = () => {
         renderer.render(scene, camera);
         return;
       }
-      const elapsed = clock.getElapsedTime();
+      const elapsed = (performance.now() - startTime) * 0.001;
 
       meshA.rotation.x = elapsed * 0.2;
       meshB.rotation.x = elapsed * 0.2;

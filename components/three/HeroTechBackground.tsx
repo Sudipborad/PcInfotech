@@ -144,7 +144,7 @@ export const HeroTechBackground: React.FC = () => {
 
     // Animation Loop
     let animId: number;
-    let clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
@@ -153,7 +153,7 @@ export const HeroTechBackground: React.FC = () => {
         renderer.render(scene, camera);
         return;
       }
-      const elapsed = clock.getElapsedTime();
+      const elapsed = (performance.now() - startTime) * 0.001;
 
       // Camera parallax
       camera.position.x += (mouseX - camera.position.x) * 0.04;

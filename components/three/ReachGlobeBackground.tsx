@@ -130,7 +130,7 @@ export const ReachGlobeBackground: React.FC = () => {
     }
 
     let animId: number;
-    let clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
@@ -139,7 +139,7 @@ export const ReachGlobeBackground: React.FC = () => {
         renderer.render(scene, camera);
         return;
       }
-      const elapsedTime = clock.getElapsedTime();
+      const elapsedTime = (performance.now() - startTime) * 0.001;
 
       globeGroup.rotation.y = elapsedTime * 0.08;
       orbitRing.rotation.z = elapsedTime * 0.05;

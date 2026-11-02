@@ -66,15 +66,15 @@ export const HomeJourney: React.FC = () => {
           </Link>
         </div>
 
-        {/* Core Philosophy Callout */}
+        {/* Founder & Leadership Callout */}
         <div className="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-7 shadow-xs mb-12 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider block">
-              Founding Principle
+              30+ Years of Hands-on Engineering Leadership
             </span>
-            <blockquote className="text-base sm:text-lg font-bold text-slate-900 italic">
-              &ldquo;{companyData.corePhilosophy}&rdquo;
-            </blockquote>
+            <p className="text-sm sm:text-base font-semibold text-slate-800">
+              Evolving from a local technical workbench into an authorized 4-state service partner for HP &amp; Canon.
+            </p>
           </div>
           <div className="flex items-center gap-2 text-xs font-semibold text-slate-600 bg-slate-50 px-3 py-2 rounded-xl border border-slate-200/70 self-start md:self-auto shrink-0">
             <GraduationCap className="w-4 h-4 text-blue-700" />

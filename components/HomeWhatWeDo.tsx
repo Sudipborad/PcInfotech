@@ -61,19 +61,19 @@ export const HomeWhatWeDo: React.FC = () => {
                 </span>
               </div>
               <h3 className="text-base font-bold text-slate-900 mb-2">
-                Authorised OEM Service
+                Official Brand Repair
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                Official warranty &amp; out-of-warranty support across Gujarat, Maharashtra, Rajasthan &amp; MP with 13 certified hubs.
+                We fix printers and computers under company warranty and after warranty across 4 states with 13 official centers.
               </p>
               <div className="space-y-1.5 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-                  <span>HP &amp; Canon ASC Certified</span>
+                  <span>Certified by HP &amp; Canon</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-                  <span>Canon 2x Best Partner</span>
+                  <span>Canon 2x Best Partner Award</span>
                 </div>
               </div>
             </div>
@@ -81,12 +81,12 @@ export const HomeWhatWeDo: React.FC = () => {
               href="/locations"
               className="pt-4 mt-5 border-t border-slate-200 text-xs font-semibold text-blue-700 hover:text-blue-800 flex items-center justify-between"
             >
-              <span>View 13 Service Hubs</span>
+              <span>Find Centers Near You</span>
               <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
 
-          {/* Card 2: Chip-Level Labs */}
+          {/* Card 2: Motherboard & Chip Repair */}
           <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between shadow-xs hover:border-blue-300 transition-all">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -94,23 +94,23 @@ export const HomeWhatWeDo: React.FC = () => {
                   <Cpu className="w-5 h-5 text-indigo-700" />
                 </div>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800">
-                  SMD Labs
+                  Expert Repair
                 </span>
               </div>
               <h3 className="text-base font-bold text-slate-900 mb-2">
-                Chip-Level Logic Card Labs
+                Circuit Board &amp; Chip Repair
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                Micro-soldering lab restoration for formatter cards, power supplies, and logic boards, saving costly swaps.
+                We repair dead printer boards, power supplies, and computer motherboards instead of replacing them, saving you big money.
               </p>
               <div className="space-y-1.5 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-indigo-600 flex-shrink-0" />
-                  <span>Oscilloscope SMD Testing</span>
+                  <span>Precise Micro-Soldering</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-indigo-600 flex-shrink-0" />
-                  <span>BGA Rework &amp; Jigs</span>
+                  <span>Save Up To 70% on Board Swaps</span>
                 </div>
               </div>
             </div>
@@ -118,7 +118,7 @@ export const HomeWhatWeDo: React.FC = () => {
               href="/services"
               className="pt-4 mt-5 border-t border-slate-200 text-xs font-semibold text-indigo-700 hover:text-indigo-800 flex items-center justify-between"
             >
-              <span>Explore Lab Scopes</span>
+              <span>See How We Fix Boards</span>
               <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
@@ -131,23 +131,23 @@ export const HomeWhatWeDo: React.FC = () => {
                   <ShoppingBag className="w-5 h-5 text-emerald-700" />
                 </div>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
-                  Online Store
+                  Buy Online
                 </span>
               </div>
               <h3 className="text-base font-bold text-slate-900 mb-2">
-                Printer Sales &amp; Spares Store
+                Buy Printers &amp; Spare Parts
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                Live e-commerce catalog (Vivek Infotech): printer sales, genuine print heads, pickup rollers &amp; fuser parts.
+                Shop brand new printers and original replacement parts online on our official Vivek Infotech digital store.
               </p>
               <div className="space-y-1.5 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-                  <span>Printer Sales — All Brands</span>
+                  <span>All Popular Printer Brands</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-                  <span>50+ Spare Parts Online</span>
+                  <span>50+ Spare Parts Ready to Ship</span>
                 </div>
               </div>
             </div>
@@ -170,23 +170,23 @@ export const HomeWhatWeDo: React.FC = () => {
                   <Boxes className="w-5 h-5 text-slate-700" />
                 </div>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-200 text-slate-800">
-                  All Brands
+                  Wholesale
                 </span>
               </div>
               <h3 className="text-base font-bold text-slate-900 mb-2">
-                Bulk Spares &amp; Dealer Supply
+                Wholesale Parts for Shops &amp; Dealers
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                Genuine and compatible parts supply for all brands serving 1,000+ dealers and corporates across 8 states.
+                We supply genuine printer and computer parts in bulk to 1,000+ local repair shops and companies across 8 states.
               </p>
               <div className="space-y-1.5 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-                  <span>Bulk Dealer Pricing</span>
+                  <span>Best Wholesale Rates</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-                  <span>Same-Day Dispatch</span>
+                  <span>Same-Day Fast Delivery</span>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@ export const HomeWhatWeDo: React.FC = () => {
               href="/services"
               className="pt-4 mt-5 border-t border-slate-200 text-xs font-semibold text-slate-700 hover:text-slate-900 flex items-center justify-between"
             >
-              <span>Enterprise Logistics</span>
+              <span>Dealer Supply Info</span>
               <ArrowRight className="w-3 h-3" />
             </Link>
           </div>

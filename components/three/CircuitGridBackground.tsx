@@ -104,7 +104,7 @@ export const CircuitGridBackground: React.FC = () => {
     }
 
     let animId: number;
-    let clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
@@ -113,7 +113,7 @@ export const CircuitGridBackground: React.FC = () => {
         renderer.render(scene, camera);
         return;
       }
-      const elapsedTime = clock.getElapsedTime();
+      const elapsedTime = (performance.now() - startTime) * 0.001;
 
       // Pulsing trace heights
       traces.forEach((t, idx) => {

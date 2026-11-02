@@ -117,11 +117,11 @@ export default function AboutPage() {
             {/* Philosophy Banner (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-900 border border-amber-200/70">
-                <span>The Guiding Principle</span>
+                <span>Our Core Mission</span>
               </div>
-              <blockquote className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-snug">
-                &ldquo;{companyData.corePhilosophy}&rdquo;
-              </blockquote>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-snug">
+                Simplifying IT Hardware Support with Engineering Excellence.
+              </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                 {companyData.vision}
               </p>

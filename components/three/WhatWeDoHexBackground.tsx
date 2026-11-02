@@ -127,7 +127,7 @@ export const WhatWeDoHexBackground: React.FC = () => {
     }
 
     let animId: number;
-    let clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
@@ -136,7 +136,7 @@ export const WhatWeDoHexBackground: React.FC = () => {
         renderer.render(scene, camera);
         return;
       }
-      const elapsed = clock.getElapsedTime();
+      const elapsed = (performance.now() - startTime) * 0.001;
 
       hexGroup.rotation.y = mouseX * 0.002;
       hexGroup.rotation.x = -mouseY * 0.002;

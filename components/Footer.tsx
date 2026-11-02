@@ -174,11 +174,6 @@ export const Footer: React.FC = () => {
           <div>
             © {new Date().getFullYear()} {companyData.name}. All verified operational data from certified organizational profile.
           </div>
-          <div className="flex items-center gap-4">
-            <span className="text-slate-700 font-medium">
-              Vision: &ldquo;{companyData.corePhilosophy}&rdquo;
-            </span>
-          </div>
         </div>
       </div>
     </footer>
